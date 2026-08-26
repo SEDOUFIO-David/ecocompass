@@ -80,10 +80,10 @@
 
 ## Copie GitHub EcoCompass
 
-- [ ] Auditer l’arborescence, la configuration et la capacité d’export du projet actuel.
-- [ ] Vérifier la liaison avec le dépôt GitHub cible.
-- [ ] Créer le commit initial « Initial commit — EcoCompass V5 » et transférer les fichiers nécessaires.
-- [ ] Contrôler la présence des fichiers essentiels dans le dépôt distant.
+- [x] Auditer l’arborescence, la configuration et la capacité d’export du projet actuel.
+- [x] Vérifier la liaison avec le dépôt GitHub cible.
+- [x] Créer le commit initial « Initial commit — EcoCompass V5 » et transférer les fichiers nécessaires.
+- [x] Contrôler la présence des fichiers essentiels dans le dépôt distant.
 
 ## EcoCompass V3
 

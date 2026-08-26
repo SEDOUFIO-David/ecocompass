@@ -5,13 +5,14 @@ import { Link } from "wouter";
 import { ArrowRight, BarChart3, BookOpenText, BriefcaseBusiness, CircleHelp, Compass, Database, GraduationCap, MapPinned, Play } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import AtlasPanel from "@/components/AtlasPanel";
+import BrandMark from "@/components/BrandMark";
 import { useLearning } from "@/contexts/LearningContext";
 import { courses } from "@/data/ecocompass";
 
-const actionCards = [
-  { icon: Compass, label: "01 · Point de départ", title: "Comprendre les bases", text: "Des repères simples pour lire une situation économique avec méthode.", href: "/decouvrir", tone: "route-lead" },
-  { icon: BookOpenText, label: "02 · Lecture guidée", title: "Suivre un cours", text: "Des notions structurées, des exemples et des exercices à votre rythme.", href: "/apprendre", tone: "route-study" },
-  { icon: BriefcaseBusiness, label: "03 · Mise en perspective", title: "Explorer des pistes", text: "Métiers, compétences et formations à comparer avec discernement.", href: "/metiers", tone: "route-orient" },
+const orientationRoutes = [
+  { icon: Compass, number: "01", title: "Prendre les bases", text: "Une première question, des repères et des exemples.", href: "/decouvrir", action: "Ouvrir les bases" },
+  { icon: BookOpenText, number: "02", title: "Suivre un cours", text: "Une notion, un exercice et une trace de lecture.", href: "/apprendre", action: "Voir les cours" },
+  { icon: BriefcaseBusiness, number: "03", title: "Comparer des pistes", text: "Des rôles, des compétences et des formations à vérifier.", href: "/metiers", action: "Explorer les métiers" },
 ];
 
 export default function Home() {
@@ -19,25 +20,35 @@ export default function Home() {
   const resumeCourse = courses.find((course) => course.slug === lastCourse) || courses[0];
   const progress = Math.round((completed.length / courses.length) * 100);
   return <SiteShell>
-    <section className="hero-home overflow-hidden">
-      <div className="container grid items-center gap-12 py-14 lg:grid-cols-[.92fr_1.08fr] lg:py-20">
-        <div className="relative z-10 max-w-xl">
+    <section className="orientation-board">
+      <div className="container orientation-board-grid">
+        <div className="orientation-board-intro">
           <p className="eyebrow">Économie · Togo et Afrique</p>
-          <h1 className="home-title">Comprendre l’économie.<br /><em>Construire des repères utiles.</em></h1>
-          <p className="home-lede">EcoCompass rassemble les notions, les données et les pistes d’orientation nécessaires pour apprendre avec méthode et relier les idées au réel.</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row"><Link href="/decouvrir" className="cta-primary">Explorer les bases <ArrowRight size={18} /></Link><Link href="/apprendre" className="cta-secondary">Voir les cours</Link></div>
-          <div className="home-proof"><span>01</span><p><b>Apprentissage local.</b> Votre progression reste dans ce navigateur.</p></div>
+          <p className="orientation-board-index">Point de départ <span>01</span></p>
+          <h1>Comprendre l’économie.<br /><em>Construire des repères utiles.</em></h1>
+          <p>EcoCompass relie notions, données et orientation dans un même chemin de lecture : une question, un repère, puis une suite possible.</p>
+          <div className="orientation-board-actions"><Link href="/decouvrir" className="cta-primary">Commencer par les bases <ArrowRight size={18} /></Link><Link href="/apprendre" className="cta-secondary">Choisir un cours</Link></div>
+          <div className="orientation-board-local"><span>Local</span><p><b>Votre progression reste ici.</b> Aucun compte factice ni score public.</p></div>
         </div>
-        <div className="hero-image-frame"><AtlasPanel variant="overview" /><div className="hero-image-note"><Compass size={18} /><span><b>Un cadre de travail clair.</b><br />Commencez par une question, puis avancez étape par étape.</span></div></div>
+        <div className="orientation-board-map">
+          <div className="orientation-board-map-head"><span>Carte de lecture</span><span>01—03</span></div>
+          <AtlasPanel variant="overview" />
+          <div className="orientation-board-map-note"><Compass size={17} /><span><b>Une route avant une réponse.</b><br />Commencez par un sujet, puis poursuivez vers le cours, la donnée ou la piste associée.</span></div>
+        </div>
+        <nav className="orientation-route-list" aria-label="Parcours essentiels">
+          <div className="orientation-route-list-head"><div><BrandMark className="orientation-route-brand" /><p className="eyebrow">Choisir une route</p></div><span>3 parcours</span></div>
+          {orientationRoutes.map(({ icon: Icon, number, title, text, href, action }) => <Link href={href} className="orientation-route" key={href}><span className="orientation-route-number">{number}</span><span className="orientation-route-icon"><Icon size={18} /></span><span className="orientation-route-copy"><b>{title}</b><small>{text}</small></span><span className="orientation-route-action">{action} <ArrowRight size={15} /></span></Link>)}
+        </nav>
       </div>
-      <div className="hero-rule" />
     </section>
 
     <section className="border-y border-[#D7E3DB] bg-[#FFFDF8] py-4"><div className="container learning-pulse"><div className="learning-pulse-title"><span className="pulse-compass"><Compass size={16} /></span><div><p className="eyebrow">Votre boussole d’apprentissage</p><b>{completed.length} / {courses.length} cours terminés</b></div></div><div className="pulse-progress"><div><span>Progression locale</span><b>{progress} %</b></div><div className="pulse-track"><i style={{ width: `${progress}%` }} /></div></div><Link href={`/apprendre/${resumeCourse.slug}`} className="pulse-link"><Play size={15} /> {completed.length ? "Continuer" : "Commencer"} : {resumeCourse.title}<ArrowRight size={15} /></Link></div></section>
 
-    <section className="section-space bg-white">
-      <div className="container"><div className="section-heading"><div><p className="eyebrow">Trois entrées, un même parcours</p><h2>Choisissez votre point de départ.</h2></div><p>Chaque étape mène vers des cours, des cas pratiques ou des pistes à examiner.</p></div>
-      <div className="home-route-map mt-9">{actionCards.map(({ icon: Icon, label, title, text, href, tone }, index) => <Link href={href} className={`home-route-card ${tone}`} key={title}><div className="home-route-marker"><Icon size={20} /></div><div><p className="eyebrow">{label}</p><h3>{title}</h3><p>{text}</p></div><span className="card-arrow">{index === 0 ? "Commencer les bases" : index === 1 ? "Suivre le parcours" : "Comparer les pistes"} <ArrowRight size={16} /></span></Link>)}</div></div>
+    <section className="route-workbench-section">
+      <div className="container route-workbench">
+        <div className="route-workbench-brief"><p className="eyebrow">Un geste, une suite</p><h2>Ne cherchez pas un parcours idéal.<br /><em>Construisez une prochaine étape crédible.</em></h2><p>Chaque route donne un point d’entrée et garde visibles les liens vers les ressources qui permettent de poursuivre avec méthode.</p></div>
+        <div className="route-workbench-methods"><article><span>01</span><CircleHelp size={22} /><h3>Poser une question</h3><p>Isoler le fait, la contrainte ou le choix que vous cherchez à comprendre.</p></article><article><span>02</span><Database size={22} /><h3>Lire un repère</h3><p>Identifier une notion, une source ou un graphique avec son contexte de lecture.</p></article><article><span>03</span><BarChart3 size={22} /><h3>Choisir la suite</h3><p>Continuer vers un cours, un cas pratique ou une piste de métier à comparer.</p></article></div>
+      </div>
     </section>
 
     <section className="section-space bg-[#EDF2EC]">

@@ -161,6 +161,13 @@
 - [x] Renforcer le retour à la ligne, le focus, le zoom, les contrôles et les messages d’état.
 - [x] Vérifier les thèmes, le responsive et publier une passe UI/UX visible.
 
+## Refonte structurelle guidée par le référentiel UI/UX partagé
+
+- [x] Réexaminer les patterns de composition, de navigation et de composants du référentiel avec des critères de changement visibles.
+- [x] Définir une direction de refonte complète et les écrans prioritaires, sans supprimer les parcours existants.
+- [x] Transformer concrètement l’accueil, le répertoire Métiers et les parcours de navigation associés.
+- [x] Vérifier la cohérence claire/sombre, l’accessibilité et les vues mobiles avant publication.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

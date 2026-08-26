@@ -99,3 +99,5 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - Les tableaux de bord personnels présentent les chiffres comme des **jalons de parcours** : chaque indicateur doit être relié à une trace d’apprentissage, une limite de lecture ou une prochaine action, jamais à une logique de performance isolée.
 - Les zones de progression utilisent des cartouches monospace précisant le périmètre, le statut local et la règle de mise à jour afin d’en faire des objets éditoriaux transparents.
 - Les arrière-plans de héros et parcours emploient une géométrie de boussole, de route ou de carte plutôt que de simples formes décoratives.
+- Les modules de l’espace personnel sont des jalons reliés d’une même trajectoire Atlas : chaque bloc fait apparaître une prochaine trace concrète, une limite de lecture ou une action de continuation.
+- Les échéances, rappels, limites et éléments à vérifier empruntent le traitement de note de terrain ocre, afin de distinguer visuellement le contexte et la prudence de la progression en vert Atlas.

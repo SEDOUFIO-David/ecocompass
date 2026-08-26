@@ -71,6 +71,13 @@
 - [x] Ajouter un graphique de progression du plan d’action au tableau de bord.
 - [x] Vérifier le rendu, l’accessibilité et sauvegarder l’amélioration.
 
+## Historique et rappels locaux
+
+- [x] Analyser les données locales nécessaires pour historiser les actions par semaine.
+- [x] Ajouter un historique hebdomadaire détaillé dans le tableau de bord.
+- [x] Ajouter des rappels locaux pour les échéances proches avec contrôle utilisateur.
+- [x] Vérifier le suivi, les rappels et sauvegarder l’amélioration.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

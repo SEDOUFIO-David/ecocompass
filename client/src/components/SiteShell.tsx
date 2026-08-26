@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { ArrowUpRight, BookmarkCheck, Compass, FlaskConical, Menu, Moon, Search, ShieldCheck, Sun, UserRound, X } from "lucide-react";
 import BrandMark from "@/components/BrandMark";
+import DisplayPreferences from "@/components/DisplayPreferences";
 import { useTheme } from "@/contexts/ThemeContext";
 
 const nav = [
@@ -52,6 +53,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
             <Link href="/recherche" className="grid h-10 w-10 place-items-center rounded-full text-[#14333A] transition hover:bg-[#E8F0EA]" aria-label="Ouvrir la recherche"><Search size={19} strokeWidth={2.2} /></Link>
             <Link href="/favoris" className="hidden h-10 w-10 place-items-center rounded-full text-[#14333A] transition hover:bg-[#E8F0EA] md:grid" aria-label="Ouvrir mes favoris"><BookmarkCheck size={19} strokeWidth={2.1} /></Link>
             {toggleTheme && <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label={theme === "dark" ? "Activer le mode clair" : "Activer le mode sombre"} title={theme === "dark" ? "Mode clair" : "Mode sombre"}>{theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}</button>}
+            <DisplayPreferences />
             <Link href="/mon-ecocompass" className="header-space-link hidden items-center gap-2 lg:flex">Mon espace <UserRound size={16} /></Link>
             <button type="button" className="grid h-10 w-10 place-items-center rounded-full bg-[#E8F0EA] xl:hidden" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"} aria-expanded={menuOpen}>{menuOpen ? <X size={21} /> : <Menu size={21} />}</button>
           </div>

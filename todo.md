@@ -111,6 +111,13 @@
 - [x] Corriger les jetons de couleur et les états interactifs insuffisamment lisibles.
 - [x] Vérifier les écrans prioritaires dans les deux thèmes et publier le correctif.
 
+## Préférences d’affichage
+
+- [x] Auditer le système de thème et définir les préférences à mémoriser.
+- [x] Créer un panneau de préférences accessible pour le thème et l’affichage.
+- [x] Ajouter une transition de thème fluide qui respecte la réduction de mouvement.
+- [x] Vérifier les préférences, synchroniser et publier la mise à jour.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

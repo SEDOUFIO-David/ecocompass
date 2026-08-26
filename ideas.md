@@ -106,3 +106,6 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - Les répertoires de cours présentent les cartes comme des **arrêts nommés** sur une ligne de lecture graduée ; une entrée de chapitre est toujours signalée comme jalon, jamais comme simple tuile de catalogue.
 - Les héros utilisent une géométrie d’usage — ticks de boussole, lignes de carte, arcs de route et annotations — plutôt que des cercles ou aplats abstraits sans fonction de repérage.
 - Les fiches métier suivent un **dossier d’orientation** explicite : rôle → questions → compétences → études et projets → métiers proches ; les liens connexes sont formulés comme des prochaines traces d’apprentissage.
+- Les répertoires métier structurent chaque famille comme une **étape de cartographie** : une piste d’entrée prioritaire est suivie de pistes à comparer, avec une marge qui relie explicitement compétences, formations et projets.
+- Le bleu nuit porte les encadrés d’autorité et les pistes d’entrée ; le vert Atlas reste réservé aux jalons, actions et données essentielles ; l’ocre reste limité aux prudences méthodologiques et repères de terrain.
+- La boussole EcoCompass devient un repère de chapitre et de prochaine piste dans les pages intérieures, et non un simple symbole d’en-tête.

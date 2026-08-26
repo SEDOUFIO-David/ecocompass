@@ -43,6 +43,19 @@ Toutes les valeurs ci-dessous proviennent de l’API Banque mondiale, source Wor
 | Valeur ajoutée de l’industrie | `NV.IND.TOTL.ZS` | 21,02 % du PIB | 2025 | Inclut la construction selon la définition de la source |
 | Valeur ajoutée des services | `NV.SRV.TOTL.ZS` | 61,71 % du PIB | 2025 | Part publiée par la source ; la cohérence avec les autres composantes est à lire avec la méthodologie WDI |
 
+## Comparaison régionale retenue
+
+La première comparaison porte sur les voisins directs du Togo — **Bénin, Burkina Faso et Ghana** — et emploie strictement les mêmes définitions Banque mondiale pour 2025. Elle ne crée ni palmarès ni recommandation : les écarts sont présentés comme un point de départ pour lire les définitions, les séries et les contextes nationaux.
+
+| Pays | Croissance réelle du PIB | Inflation, prix à la consommation | Population totale |
+|---|---:|---:|---:|
+| Togo | 6,31 % | 0,43 % | 8 591 626 |
+| Bénin | 8,07 % | 1,10 % | 14 814 460 |
+| Burkina Faso | 5,29 % | -0,59 % | 24 074 580 |
+| Ghana | 5,95 % | 14,20 % | 35 064 272 |
+
+**Source commune :** Banque mondiale, World Development Indicators, indicateurs `NY.GDP.MKTP.KD.ZG`, `FP.CPI.TOTL.ZG` et `SP.POP.TOTL`, réponses API 2025 consultées le 26 août 2026 et déclarées mises à jour le 13 juillet 2026. Les valeurs d’inflation et de croissance doivent être lues avec leur méthodologie et leur contexte, et non comme une mesure de bien-être ou de qualité de politique publique.
+
 ## Décision d’architecture à confirmer
 
 Deux modalités sont possibles : publier un **instantané documenté** de données sélectionnées, mis à jour lors de versions éditoriales, ou construire un **tableau actualisé périodiquement** par des appels aux API publiques. La seconde option nécessite une couche serveur et une politique explicite de fréquence, de contrôle des anomalies et d’affichage de la date de dernière mise à jour.

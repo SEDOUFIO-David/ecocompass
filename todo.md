@@ -133,6 +133,14 @@
 - [x] Intégrer les indicateurs publics validés avec date, unité, source et limites.
 - [x] Vérifier les données et l’accessibilité dans les deux thèmes, puis publier.
 
+## Comparaison régionale et favoris
+
+- [x] Auditer les favoris existants et sélectionner des indicateurs comparables pour les pays voisins.
+- [x] Collecter les séries publiques régionales avec année, unité, source et limite de lecture.
+- [x] Ajouter une comparaison régionale documentée à la page Togo.
+- [x] Ajouter ou vérifier les favoris sur les fiches métier et les cours.
+- [x] Tester les interactions, les données et publier la mise à jour.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

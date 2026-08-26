@@ -224,6 +224,455 @@
   color: #eef7f1;
 }
 
+/* Dossier de comparaison régionale : même unité, même année, mêmes sources. */
+.regional-section {
+  background: #edf3ed;
+}
+
+.regional-heading {
+  align-items: end;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .54fr);
+}
+
+.regional-heading h2 {
+  color: #173a39;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(2rem, 3.2vw, 3.1rem);
+  letter-spacing: -.05em;
+  line-height: .98;
+  margin: .55rem 0;
+  max-width: 720px;
+}
+
+.regional-heading > div > p:not(.eyebrow) {
+  color: #55716a;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 670px;
+}
+
+.regional-method-note {
+  background: #f5e9d5;
+  border-left: 3px solid #c17c36;
+  color: #725333;
+  display: flex;
+  font-size: .78rem;
+  gap: .6rem;
+  line-height: 1.55;
+  padding: .8rem .9rem;
+}
+
+.regional-method-note svg {
+  color: #a26425;
+  flex: none;
+  margin-top: .1rem;
+}
+
+.regional-method-note p {
+  margin: 0;
+}
+
+.regional-dossier {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+  margin-top: 1.5rem;
+}
+
+.regional-table-wrap,
+.regional-chart-panel {
+  background: #fffdf8;
+  border: 1px solid #cfdfd3;
+  border-radius: .45rem;
+  padding: 1rem;
+}
+
+.regional-table-wrap {
+  overflow-x: auto;
+}
+
+.regional-table-wrap table {
+  border-collapse: collapse;
+  min-width: 590px;
+  text-align: left;
+  width: 100%;
+}
+
+.regional-table-wrap caption {
+  caption-side: top;
+  color: #163d39;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  padding: .1rem 0 .8rem;
+  text-align: left;
+}
+
+.regional-table-wrap th,
+.regional-table-wrap td {
+  border-bottom: 1px solid #dce7de;
+  color: #49625c;
+  font-size: .78rem;
+  padding: .75rem .65rem;
+}
+
+.regional-table-wrap thead th {
+  color: #55736a;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .6rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.regional-table-wrap tbody th {
+  color: #173a39;
+  font-weight: 700;
+}
+
+.regional-table-wrap .regional-current th,
+.regional-table-wrap .regional-current td {
+  background: #e4f1e7;
+  color: #124e45;
+  font-weight: 700;
+}
+
+.regional-chart-panel .eyebrow {
+  margin-bottom: .2rem;
+}
+
+.regional-source-strip {
+  align-items: flex-start;
+  border-top: 1px solid #cbdcd0;
+  color: #5f746c;
+  display: flex;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .62rem;
+  gap: .45rem;
+  line-height: 1.55;
+  margin-top: .85rem;
+  padding-top: .85rem;
+}
+
+.regional-source-strip svg {
+  color: #0e6356;
+  flex: none;
+  margin-top: .1rem;
+}
+
+.dark .regional-section {
+  background: #102d2e;
+}
+
+.dark .regional-heading h2 {
+  color: #f2f8f3;
+}
+
+.dark .regional-heading > div > p:not(.eyebrow),
+.dark .regional-source-strip {
+  color: #c8ddd2;
+}
+
+.dark .regional-method-note {
+  background: #3f311e;
+  border-color: #e1b76c;
+  color: #fff2dc;
+}
+
+.dark .regional-method-note svg {
+  color: #f1c77b;
+}
+
+.dark .regional-table-wrap,
+.dark .regional-chart-panel {
+  background: #17383a;
+  border-color: #52726f;
+}
+
+.dark .regional-table-wrap caption,
+.dark .regional-table-wrap tbody th {
+  color: #f3faf5;
+}
+
+.dark .regional-table-wrap th,
+.dark .regional-table-wrap td {
+  border-color: #496966;
+  color: #d2e3da;
+}
+
+.dark .regional-table-wrap thead th {
+  color: #bcd8ca;
+}
+
+.dark .regional-table-wrap .regional-current th,
+.dark .regional-table-wrap .regional-current td {
+  background: #27524c;
+  color: #f3faf5;
+}
+
+.dark .regional-source-strip {
+  border-color: #496966;
+}
+
+.dark .regional-source-strip svg {
+  color: #bce4c9;
+}
+
+/* Repères personnels : favoris disponibles dans les listes comme dans les fiches. */
+.course-card-atlas,
+.career-card-v4 {
+  position: relative;
+}
+
+.course-card-link,
+.career-card-link {
+  color: inherit;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.course-card-atlas > .favorite-button-compact,
+.career-card-v4 > .favorite-button-compact {
+  position: absolute;
+  right: .8rem;
+  top: .75rem;
+  z-index: 3;
+}
+
+.course-card-route-anchor > .favorite-button-compact {
+  right: .9rem;
+  top: 2.2rem;
+}
+
+.course-card-route-anchor::after {
+  right: 3.2rem;
+}
+
+.career-card-v4 > .favorite-button-compact {
+  right: .75rem;
+  top: .7rem;
+}
+
+.career-card-v4 .career-card-link > div:first-child {
+  padding-right: 2rem;
+}
+
+/* Répertoire des métiers : chaque famille devient une étape de route, pas une grille neutre. */
+.career-route-chapter {
+  border-left: 1px solid #aac5b3;
+  margin-left: .55rem;
+  padding: 0 0 2.65rem 1.45rem;
+  position: relative;
+}
+
+.career-route-chapter::before {
+  background: #0e6356;
+  border: 3px solid #f8f5ed;
+  border-radius: 50%;
+  content: "";
+  height: .72rem;
+  left: -.43rem;
+  position: absolute;
+  top: 1.2rem;
+  width: .72rem;
+}
+
+.career-route-chapter > header {
+  align-items: center;
+  border-bottom: 1px solid #bcd2c3;
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  padding-bottom: .8rem;
+}
+
+.career-route-chapter > header > span {
+  align-items: center;
+  background: #14333a;
+  color: #d7f0df;
+  display: flex;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .62rem;
+  gap: .35rem;
+  letter-spacing: .04em;
+  padding: .48rem .58rem;
+}
+
+.career-route-chapter > header h3 {
+  color: #153d39;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.7rem, 2.7vw, 2.5rem);
+  letter-spacing: -.05em;
+  margin: .12rem 0 0;
+}
+
+.career-route-chapter > header small {
+  color: #57736a;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .6rem;
+  text-transform: uppercase;
+}
+
+.career-chapter-route {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: .8rem 0;
+}
+
+.career-chapter-route > p {
+  color: #5b716b;
+  font-size: .74rem;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 390px;
+}
+
+.career-chapter-route > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+.career-chapter-route a {
+  align-items: center;
+  border-bottom: 1px solid #6ba189;
+  color: #0e6356;
+  display: inline-flex;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .6rem;
+  gap: .25rem;
+  padding: .18rem 0;
+  text-decoration: none;
+}
+
+.career-card-route-grid {
+  display: grid;
+  gap: .85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.career-card-stop {
+  border-radius: .4rem !important;
+}
+
+.career-card-leading {
+  background: #14333a !important;
+  border-color: #14333a !important;
+  border-radius: .42rem !important;
+  grid-column: span 2;
+  min-height: 245px;
+}
+
+.career-card-leading .career-card-link,
+.career-card-leading h3,
+.career-card-leading p,
+.career-card-leading .career-v4-meta,
+.career-card-leading .career-v4-meta span {
+  color: #f1f8f3 !important;
+}
+
+.career-card-leading .career-category,
+.career-card-leading .career-stop-label {
+  color: #c7ead4 !important;
+}
+
+.career-card-leading .skill-mini {
+  background: #28534d;
+  color: #e1f3e7;
+}
+
+.career-stop-label {
+  color: #568578;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .56rem;
+  letter-spacing: .07em;
+  margin: .85rem 0 .35rem !important;
+  text-transform: uppercase;
+}
+
+.career-card-leading > .favorite-button-compact {
+  background: #28534d;
+  border-color: #7ab292;
+  color: #e2f5e8;
+}
+
+.dark .career-route-chapter {
+  border-color: #577b70;
+}
+
+.dark .career-route-chapter::before {
+  background: #bce4c9;
+  border-color: #102d2e;
+}
+
+.dark .career-route-chapter > header {
+  border-color: #56776e;
+}
+
+.dark .career-route-chapter > header h3 {
+  color: #f2f9f4;
+}
+
+.dark .career-route-chapter > header small,
+.dark .career-chapter-route > p {
+  color: #c7ddd2;
+}
+
+.dark .career-chapter-route a {
+  border-color: #8abda1;
+  color: #c6ebd4;
+}
+
+.dark .career-card-leading {
+  background: #0d292a !important;
+  border-color: #6a9780 !important;
+}
+
+@media (max-width: 920px) {
+  .career-card-route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .career-route-chapter {
+    margin-left: .35rem;
+    padding-left: 1rem;
+  }
+
+  .career-route-chapter > header {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .career-route-chapter > header small {
+    display: none;
+  }
+
+  .career-chapter-route {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .career-card-route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-card-leading {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .regional-heading,
+  .regional-dossier {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Itinéraires Atlas : les arrêts et les dossiers remplacent le motif de grille uniforme. */
 .page-hero-learn {
   background:

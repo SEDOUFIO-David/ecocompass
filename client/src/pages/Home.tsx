@@ -2,8 +2,10 @@
  * Design: Atlas académique vivant — un accueil asymétrique, chaleureux et orienté vers la prochaine question.
  */
 import { Link } from "wouter";
-import { ArrowRight, BarChart3, BookOpenText, BriefcaseBusiness, CircleHelp, Compass, Database, GraduationCap, MapPinned, Sparkles } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpenText, BriefcaseBusiness, CircleHelp, Compass, Database, GraduationCap, MapPinned, Play, Sparkles } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
+import { useLearning } from "@/contexts/LearningContext";
+import { courses } from "@/data/ecocompass";
 
 const actionCards = [
   { icon: Compass, label: "Je débute", title: "Comprendre l’économie", text: "Un parcours guidé, concret et sans jargon inutile.", href: "/decouvrir", accent: "bg-[#DDEDE6]" },
@@ -12,6 +14,9 @@ const actionCards = [
 ];
 
 export default function Home() {
+  const { completed, lastCourse } = useLearning();
+  const resumeCourse = courses.find((course) => course.slug === lastCourse) || courses[0];
+  const progress = Math.round((completed.length / courses.length) * 100);
   return <SiteShell>
     <section className="hero-home overflow-hidden">
       <div className="container grid items-center gap-12 py-14 lg:grid-cols-[.92fr_1.08fr] lg:py-20">
@@ -26,6 +31,8 @@ export default function Home() {
       </div>
       <div className="hero-rule" />
     </section>
+
+    <section className="border-y border-[#D7E3DB] bg-[#FFFDF8] py-4"><div className="container learning-pulse"><div className="learning-pulse-title"><span className="pulse-compass"><Compass size={16} /></span><div><p className="eyebrow">Votre boussole d’apprentissage</p><b>{completed.length} / {courses.length} cours terminés</b></div></div><div className="pulse-progress"><div><span>Progression locale</span><b>{progress} %</b></div><div className="pulse-track"><i style={{ width: `${progress}%` }} /></div></div><Link href={`/apprendre/${resumeCourse.slug}`} className="pulse-link"><Play size={15} /> {completed.length ? "Continuer" : "Commencer"} : {resumeCourse.title}<ArrowRight size={15} /></Link></div></section>
 
     <section className="section-space bg-white">
       <div className="container"><div className="section-heading"><div><p className="eyebrow">Choisir son entrée</p><h2>Que souhaitez-vous faire ?</h2></div><p>Commencez là où vous en êtes. Chaque chemin est relié aux autres.</p></div>

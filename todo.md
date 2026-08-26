@@ -124,6 +124,15 @@
 - [x] Corriger les contrastes internes des cartes et généraliser les règles de surface sombre.
 - [x] Vérifier les cours et cartes en clair et en sombre, puis publier le correctif.
 
+## Accessibilité et données institutionnelles
+
+- [x] Auditer les fiches métier, la recherche de cours et les besoins prioritaires de données réelles.
+- [x] Définir la stratégie de sources publiques, les indicateurs et le rythme de mise à jour.
+- [x] Préparer un instantané éditorial vérifié de données publiques pour le Togo et l’Afrique.
+- [x] Corriger les fiches métier, ajouter le contraste renforcé et étendre les filtres de cours.
+- [x] Intégrer les indicateurs publics validés avec date, unité, source et limites.
+- [x] Vérifier les données et l’accessibilité dans les deux thèmes, puis publier.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

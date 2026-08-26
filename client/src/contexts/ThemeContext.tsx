@@ -4,6 +4,7 @@ import "@/theme-overrides.css";
 export type Theme = "light" | "dark";
 export type DisplayScale = "standard" | "large";
 export type MotionPreference = "standard" | "reduced";
+export type ContrastPreference = "standard" | "enhanced";
 
 interface ThemeContextType {
   theme: Theme;
@@ -13,6 +14,8 @@ interface ThemeContextType {
   setDisplayScale: (scale: DisplayScale) => void;
   motionPreference: MotionPreference;
   setMotionPreference: (preference: MotionPreference) => void;
+  contrastPreference: ContrastPreference;
+  setContrastPreference: (preference: ContrastPreference) => void;
   switchable: boolean;
 }
 
@@ -37,6 +40,7 @@ export function ThemeProvider({ children, defaultTheme = "light", switchable = f
   const [theme, setTheme] = useState<Theme>(() => switchable ? readPreference("ecocompass-theme", defaultTheme, ["light", "dark"]) : defaultTheme);
   const [displayScale, setDisplayScale] = useState<DisplayScale>(() => readPreference("ecocompass-display-scale", "standard", ["standard", "large"]));
   const [motionPreference, setMotionPreference] = useState<MotionPreference>(() => readPreference("ecocompass-motion", "standard", ["standard", "reduced"]));
+  const [contrastPreference, setContrastPreference] = useState<ContrastPreference>(() => readPreference("ecocompass-contrast", "standard", ["standard", "enhanced"]));
   const hasMounted = useRef(false);
 
   useEffect(() => {
@@ -44,6 +48,7 @@ export function ThemeProvider({ children, defaultTheme = "light", switchable = f
     root.classList.toggle("dark", theme === "dark");
     root.classList.toggle("display-large", displayScale === "large");
     root.classList.toggle("motion-reduced", motionPreference === "reduced");
+    root.classList.toggle("contrast-enhanced", contrastPreference === "enhanced");
 
     if (hasMounted.current && motionPreference !== "reduced") {
       root.classList.add("theme-transition");
@@ -51,7 +56,7 @@ export function ThemeProvider({ children, defaultTheme = "light", switchable = f
       return () => window.clearTimeout(timeout);
     }
     hasMounted.current = true;
-  }, [theme, displayScale, motionPreference]);
+  }, [theme, displayScale, motionPreference, contrastPreference]);
 
   useEffect(() => {
     if (!switchable) return;
@@ -59,14 +64,15 @@ export function ThemeProvider({ children, defaultTheme = "light", switchable = f
       localStorage.setItem("ecocompass-theme", theme);
       localStorage.setItem("ecocompass-display-scale", displayScale);
       localStorage.setItem("ecocompass-motion", motionPreference);
+      localStorage.setItem("ecocompass-contrast", contrastPreference);
     } catch {
       // Les préférences restent actives durant la session si le stockage est indisponible.
     }
-  }, [theme, displayScale, motionPreference, switchable]);
+  }, [theme, displayScale, motionPreference, contrastPreference, switchable]);
 
   const toggleTheme = switchable ? () => setTheme((current) => current === "light" ? "dark" : "light") : undefined;
 
-  return <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, displayScale, setDisplayScale, motionPreference, setMotionPreference, switchable }}>{children}</ThemeContext.Provider>;
+  return <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, displayScale, setDisplayScale, motionPreference, setMotionPreference, contrastPreference, setContrastPreference, switchable }}>{children}</ThemeContext.Provider>;
 }
 
 export function useTheme() {

@@ -103,3 +103,6 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - Les échéances, rappels, limites et éléments à vérifier empruntent le traitement de note de terrain ocre, afin de distinguer visuellement le contexte et la prudence de la progression en vert Atlas.
 - Le système visuel est resserré vers un dossier éditorial professionnel : Source Serif pour les titres, Source Sans pour la lecture courante, géométrie sobre, surfaces moins arrondies et langage plus direct.
 - Les symboles de marque et les illustrations fonctionnelles sont vectoriels et inclus dans le code afin que l’identité reste fiable après export vers un hébergeur tiers.
+- Les répertoires de cours présentent les cartes comme des **arrêts nommés** sur une ligne de lecture graduée ; une entrée de chapitre est toujours signalée comme jalon, jamais comme simple tuile de catalogue.
+- Les héros utilisent une géométrie d’usage — ticks de boussole, lignes de carte, arcs de route et annotations — plutôt que des cercles ou aplats abstraits sans fonction de repérage.
+- Les fiches métier suivent un **dossier d’orientation** explicite : rôle → questions → compétences → études et projets → métiers proches ; les liens connexes sont formulés comme des prochaines traces d’apprentissage.

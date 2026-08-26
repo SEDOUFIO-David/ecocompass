@@ -90,6 +90,324 @@
   color: #f5faf6;
 }
 
+.filter-search > span {
+  align-items: center;
+  display: inline-flex;
+  gap: .3rem;
+}
+
+.filter-search input {
+  background: transparent;
+  border: 0;
+  color: #193c39;
+  font: inherit;
+  min-width: 0;
+  outline: none;
+  padding: 0;
+  width: 100%;
+}
+
+.filter-search input::placeholder {
+  color: #697d77;
+  opacity: 1;
+}
+
+.dark .filter-search input {
+  color: #f5faf6;
+}
+
+.dark .filter-search input::placeholder {
+  color: #bfd3c9;
+}
+
+.indicator-caution {
+  color: #5d716b;
+  display: block;
+  line-height: 1.4;
+  margin-top: .5rem;
+}
+
+.indicator-source-link {
+  align-items: center;
+  color: #0e6356;
+  display: inline-flex;
+  font-size: .72rem;
+  font-weight: 700;
+  gap: .3rem;
+  margin-top: .7rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dark .indicator-caution {
+  color: #c7dcd1;
+}
+
+.dark .indicator-source-link {
+  color: #c2e7d0;
+}
+
+/* Tableau Togo : aucune carte claire ne doit conserver une typographie pâle en thème sombre. */
+.dark .page-hero-togo + section {
+  background: #193d3e !important;
+  border-color: #52726f !important;
+}
+
+.dark .page-hero-togo + section p,
+.dark .page-hero-togo + section b {
+  color: #e7f3eb !important;
+}
+
+.dark .indicator-card,
+.dark .indicator-card:first-child {
+  background: #17383a !important;
+  border-color: #93c9aa !important;
+}
+
+.dark .indicator-card p,
+.dark .indicator-card small,
+.dark .indicator-card b {
+  color: #f2f8f3 !important;
+}
+
+.dark .indicator-card p,
+.dark .indicator-card small {
+  color: #cbe0d4 !important;
+}
+
+.dark .data-trace {
+  border-color: #55746f;
+  color: #c9ded2;
+}
+
+.dark .indicator-reading-note {
+  background: #3f311e;
+  border-left-color: #e1b76c;
+  color: #fff3dc;
+}
+
+.dark .indicator-reading-note p,
+.dark .indicator-reading-note span,
+.dark .indicator-reading-note svg {
+  color: #fff3dc !important;
+}
+
+.dark .chart-panel {
+  background: #17383a;
+  border-color: #52726f;
+}
+
+.dark .chart-panel h2 {
+  color: #f4faf5;
+}
+
+.dark .chart-panel p,
+.dark .demo-chart-caption {
+  color: #cbded3;
+}
+
+.dark .chart-switch {
+  background: #102b2d;
+}
+
+.dark .chart-switch button {
+  color: #c8ded1;
+}
+
+.dark .sector-card {
+  background: #17383a;
+  border: 1px solid #52726f;
+}
+
+.dark .sector-card h3,
+.dark .sector-card p {
+  color: #eef7f1;
+}
+
+/* Itinéraires Atlas : les arrêts et les dossiers remplacent le motif de grille uniforme. */
+.page-hero-learn {
+  background:
+    linear-gradient(90deg, transparent 0 61%, rgb(14 99 86 / 8%) 61% 61.25%, transparent 61.25%),
+    repeating-linear-gradient(0deg, rgb(14 99 86 / 8%) 0 1px, transparent 1px 30px),
+    #f8f5ed !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.page-hero-learn::after {
+  border: 1px solid rgb(14 99 86 / 34%);
+  border-radius: 50%;
+  content: "";
+  height: 15rem;
+  pointer-events: none;
+  position: absolute;
+  right: 10%;
+  top: -5.5rem;
+  width: 15rem;
+}
+
+.page-hero-learn::before {
+  background: repeating-conic-gradient(from 0deg, #0e6356 0 1deg, transparent 1deg 18deg);
+  border-radius: 50%;
+  content: "";
+  height: 7.25rem;
+  opacity: .6;
+  position: absolute;
+  right: 15.1%;
+  top: -1.65rem;
+  width: 7.25rem;
+}
+
+.page-hero-learn .container {
+  position: relative;
+  z-index: 1;
+}
+
+.course-cluster {
+  background: linear-gradient(90deg, #a9c8b4 0 1.8rem, transparent 1.8rem);
+  gap: 1rem;
+}
+
+.course-card-atlas {
+  border-radius: .5rem;
+  border-width: 1px;
+  position: relative;
+}
+
+.course-card-atlas::before {
+  background: #f8f5ed;
+  border: 2px solid #2c705f;
+  border-radius: 50%;
+  content: "";
+  height: .58rem;
+  left: -2.18rem;
+  position: absolute;
+  top: 1.15rem;
+  width: .58rem;
+}
+
+.course-card-route-anchor {
+  grid-column: span 2;
+}
+
+.course-card-route-anchor::after {
+  color: #0e6356;
+  content: "Étape d’entrée";
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .56rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  position: absolute;
+  right: 1.1rem;
+  text-transform: uppercase;
+  top: 1.1rem;
+}
+
+.career-dossier {
+  border-left: 1px solid #9cbda8;
+  counter-reset: dossier;
+  padding-left: 1.15rem;
+  position: relative;
+}
+
+.career-dossier::before {
+  background: #0e6356;
+  border: 3px solid #f8f5ed;
+  border-radius: 50%;
+  content: "";
+  height: .72rem;
+  left: -.43rem;
+  position: absolute;
+  top: 2.45rem;
+  width: .72rem;
+}
+
+.career-dossier-kicker {
+  color: #55776b;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .64rem;
+  letter-spacing: .08em;
+  line-height: 1.45;
+  margin: 0 0 .9rem;
+  text-transform: uppercase;
+}
+
+.career-dossier .career-detail-section,
+.career-dossier .career-role-block,
+.career-dossier .interest-signals,
+.career-dossier .career-v4-links > div {
+  border-radius: .45rem;
+}
+
+.career-dossier .career-detail-section {
+  border-left: 2px solid #a5c7b0;
+}
+
+.career-dossier .career-v4-links {
+  border-top: 2px solid #9cbda8;
+  position: relative;
+}
+
+.dark .page-hero-learn {
+  background:
+    linear-gradient(90deg, transparent 0 61%, rgb(167 213 182 / 15%) 61% 61.25%, transparent 61.25%),
+    repeating-linear-gradient(0deg, rgb(167 213 182 / 10%) 0 1px, transparent 1px 30px),
+    #12383a !important;
+}
+
+.dark .page-hero-learn::after {
+  border-color: rgb(188 228 201 / 45%);
+}
+
+.dark .page-hero-learn::before {
+  background: repeating-conic-gradient(from 0deg, #bce4c9 0 1deg, transparent 1deg 18deg);
+}
+
+.dark .course-cluster {
+  background: linear-gradient(90deg, #50776c 0 1.8rem, transparent 1.8rem);
+}
+
+.dark .course-card-atlas::before {
+  background: #17383a;
+  border-color: #bce4c9;
+}
+
+.dark .course-card-route-anchor::after,
+.dark .career-dossier-kicker {
+  color: #c6ebd4;
+}
+
+.dark .career-dossier {
+  border-color: #5c8378;
+}
+
+.dark .career-dossier::before {
+  background: #bce4c9;
+  border-color: #17383a;
+}
+
+.dark .career-dossier .career-detail-section {
+  border-left-color: #9fd0b4;
+}
+
+.dark .career-dossier .career-v4-links {
+  border-color: #5c8378;
+}
+
+@media (max-width: 767px) {
+  .course-card-route-anchor {
+    grid-column: auto;
+  }
+
+  .course-cluster {
+    background: linear-gradient(90deg, #a9c8b4 0 1.25rem, transparent 1.25rem);
+  }
+
+  .course-card-atlas::before {
+    left: -1.62rem;
+  }
+}
+
 .dark .empty-state {
   background: #17383a;
   border-color: #51726f;
@@ -97,4 +415,112 @@
 
 .dark .empty-state p {
   color: #c8d9d1;
+}
+
+/* Fiches métier détaillées : cartes, listes et encadrés conservent une lecture nette en thème sombre. */
+.dark .career-detail-hero {
+  background: #102b2d;
+}
+
+.dark .career-quick-card {
+  background: #1f4a4b;
+  border: 1px solid #63847d;
+  color: #f5faf6;
+}
+
+.dark .career-quick-card p,
+.dark .career-quick-card b {
+  color: #f3faf5 !important;
+}
+
+.dark .career-role-block,
+.dark .interest-signals,
+.dark .career-detail-section,
+.dark .career-sidebar {
+  background: #17383a;
+  border-color: #51726f;
+}
+
+.dark .career-role-block {
+  border: 1px solid #51726f;
+}
+
+.dark .interest-signals {
+  border-left-color: #e2b86f;
+}
+
+.dark .career-role-block h2,
+.dark .career-detail-section h2,
+.dark .career-sidebar h2 {
+  color: #f5faf6 !important;
+}
+
+.dark .career-role-block p:not(.eyebrow),
+.dark .career-context > p:not(.eyebrow),
+.dark .career-detail-section ul,
+.dark .career-sidebar ol,
+.dark .interest-signals span {
+  color: #d3e2da !important;
+}
+
+.dark .career-detail-section {
+  border: 1px solid #51726f;
+}
+
+.dark .section-icon {
+  background: #29534d;
+  color: #c7ead4;
+}
+
+.dark .career-detail-section li::before {
+  background: #bce4c9;
+}
+
+.dark .career-context,
+.dark .career-v4-links {
+  border-color: #52736f;
+}
+
+.dark .career-v4-links > div {
+  background: #1d4444;
+  border: 1px solid #52736f;
+}
+
+.dark .career-v4-links a,
+.dark .career-sidebar a {
+  color: #c2e7d0 !important;
+}
+
+/* Mode contraste renforcé : il peut s’appliquer dans les deux thèmes sans altérer les contenus. */
+.contrast-enhanced :focus-visible {
+  outline: 3px solid #e2a843 !important;
+  outline-offset: 3px;
+}
+
+.contrast-enhanced .course-card,
+.contrast-enhanced .career-detail-section,
+.contrast-enhanced .career-role-block,
+.contrast-enhanced .career-sidebar,
+.contrast-enhanced .preference-option {
+  border-width: 2px !important;
+}
+
+.contrast-enhanced :is(p, small, .course-card-footer, .chapter-margin p:not(.eyebrow), .career-detail-section ul, .career-sidebar ol) {
+  color: #27433d !important;
+}
+
+.dark.contrast-enhanced :is(p, small, .course-card-footer, .chapter-margin p:not(.eyebrow), .career-detail-section ul, .career-sidebar ol) {
+  color: #e7f3eb !important;
+}
+
+.contrast-enhanced .course-card h2,
+.contrast-enhanced .career-role-block h2,
+.contrast-enhanced .career-detail-section h2 {
+  color: #0d2c2a !important;
+}
+
+.dark.contrast-enhanced .course-card h2,
+.dark.contrast-enhanced .career-role-block h2,
+.dark.contrast-enhanced .career-detail-section h2 {
+  color: #ffffff !important;
 }

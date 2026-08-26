@@ -47,8 +47,8 @@
 
 ## Erreur du panneau d’aperçu
 
-- [ ] Extraire le message détaillé associé au compteur d’erreur affiché dans l’aperçu.
-- [ ] Corriger la cause du rendu intégré puis contrôler le panneau dans l’interface.
+- [x] Extraire le message détaillé associé au compteur d’erreur affiché dans l’aperçu.
+- [x] Corriger la cause du rendu intégré puis contrôler le panneau dans l’interface.
 
 ## Diagnostic persistant de l’aperçu intégré
 

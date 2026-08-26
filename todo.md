@@ -78,6 +78,13 @@
 - [x] Ajouter des rappels locaux pour les échéances proches avec contrôle utilisateur.
 - [x] Vérifier le suivi, les rappels et sauvegarder l’amélioration.
 
+## Copie GitHub EcoCompass
+
+- [ ] Auditer l’arborescence, la configuration et la capacité d’export du projet actuel.
+- [ ] Vérifier la liaison avec le dépôt GitHub cible.
+- [ ] Créer le commit initial « Initial commit — EcoCompass V5 » et transférer les fichiers nécessaires.
+- [ ] Contrôler la présence des fichiers essentiels dans le dépôt distant.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

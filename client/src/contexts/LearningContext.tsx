@@ -10,6 +10,7 @@ export type PersonalProfile = { name: string; level: string; interests: string[]
 export type PersonalProject = { id: string; templateSlug: string; title: string; completedAt?: string; reflection?: string; status?: "commencé" | "en-cours" | "terminé"; portfolio?: boolean; deliverable?: string };
 export type PersonalGoal = { id: string; title: string; timeframe: "quotidien" | "hebdomadaire" | "mensuel" | "long-terme"; completed: boolean };
 export type ActionTask = { id: string; title: string; dueDate?: string; completed: boolean; source?: "manual" | "path" };
+export type SuccessMoment = { id: string; kind: "badge" | "challenge"; title: string; detail: string };
 type LearningState = { started: string[]; completed: string[]; quizScores: Record<string, QuizScore>; lastCourse?: string; favorites: FavoriteItem[]; profile: PersonalProfile; projects: PersonalProject[]; activePath?: string; goals: PersonalGoal[]; actionTasks: ActionTask[]; badges: string[]; portfolioIntro: string };
 type LearningContextValue = LearningState & {
   startCourse: (slug: string) => void;
@@ -29,6 +30,9 @@ type LearningContextValue = LearningState & {
   removeTask: (id: string) => void;
   setPortfolioIntro: (value: string) => void;
   awardBadge: (badge: string) => void;
+  successMoment: SuccessMoment | null;
+  celebrate: (moment: Omit<SuccessMoment, "id">) => void;
+  dismissSuccess: () => void;
   resetProgress: () => void;
 };
 
@@ -47,6 +51,7 @@ function loadState(): LearningState {
 
 export function LearningProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<LearningState>(loadState);
+  const [successMoment, setSuccessMoment] = useState<SuccessMoment | null>(null);
   useEffect(() => {
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
@@ -58,8 +63,8 @@ export function LearningProvider({ children }: { children: ReactNode }) {
   const value = useMemo<LearningContextValue>(() => ({
     ...state,
     startCourse: (slug) => setState((current) => ({ ...current, started: current.started.includes(slug) ? current.started : [...current.started, slug], lastCourse: slug })),
-    completeCourse: (slug) => setState((current) => { const completed = current.completed.includes(slug) ? current.completed : [...current.completed, slug]; const badges = completed.length ? (current.badges.includes("Fondamentaux de l’économie") ? current.badges : [...current.badges, "Fondamentaux de l’économie"]) : current.badges; return { ...current, started: current.started.includes(slug) ? current.started : [...current.started, slug], completed, badges, lastCourse: slug }; }),
-    saveQuizScore: (slug, score, total) => setState((current) => ({ ...current, quizScores: { ...current.quizScores, [slug]: { score, total, completedAt: new Date().toISOString() } }, badges: current.badges.includes("Premier quiz") ? current.badges : [...current.badges, "Premier quiz"] })),
+    completeCourse: (slug) => { if (!state.completed.includes(slug) && !state.badges.includes("Fondamentaux de l’économie")) setSuccessMoment({ id: `success-${Date.now()}`, kind: "badge", title: "Badge débloqué : Fondamentaux", detail: "Vous avez terminé un premier cours et créé une trace d’apprentissage." }); setState((current) => { const completed = current.completed.includes(slug) ? current.completed : [...current.completed, slug]; const badges = completed.length ? (current.badges.includes("Fondamentaux de l’économie") ? current.badges : [...current.badges, "Fondamentaux de l’économie"]) : current.badges; return { ...current, started: current.started.includes(slug) ? current.started : [...current.started, slug], completed, badges, lastCourse: slug }; }); },
+    saveQuizScore: (slug, score, total) => { if (!state.quizScores[slug] && !state.badges.includes("Premier quiz")) setSuccessMoment({ id: `success-${Date.now()}`, kind: "badge", title: "Badge débloqué : Premier quiz", detail: "Votre réponse est enregistrée ; relisez aussi l’explication proposée." }); setState((current) => ({ ...current, quizScores: { ...current.quizScores, [slug]: { score, total, completedAt: new Date().toISOString() } }, badges: current.badges.includes("Premier quiz") ? current.badges : [...current.badges, "Premier quiz"] })); },
     toggleFavorite: (item) => setState((current) => ({ ...current, favorites: current.favorites.some((favorite) => favorite.id === item.id) ? current.favorites.filter((favorite) => favorite.id !== item.id) : [...current.favorites, item] })),
     isFavorite: (id) => state.favorites.some((favorite) => favorite.id === id),
     updateProfile: (profile) => setState((current) => ({ ...current, profile: { ...current.profile, ...profile } })),
@@ -73,9 +78,12 @@ export function LearningProvider({ children }: { children: ReactNode }) {
     toggleTask: (id) => setState((current) => ({ ...current, actionTasks: current.actionTasks.map((task) => task.id === id ? { ...task, completed: !task.completed } : task) })),
     removeTask: (id) => setState((current) => ({ ...current, actionTasks: current.actionTasks.filter((task) => task.id !== id) })),
     setPortfolioIntro: (value) => setState((current) => ({ ...current, portfolioIntro: value })),
-    awardBadge: (badge) => setState((current) => ({ ...current, badges: current.badges.includes(badge) ? current.badges : [...current.badges, badge] })),
+    awardBadge: (badge) => { if (!state.badges.includes(badge)) setSuccessMoment({ id: `success-${Date.now()}`, kind: "badge", title: `Badge débloqué : ${badge}`, detail: "Ce badge correspond à une action enregistrée dans votre parcours." }); setState((current) => ({ ...current, badges: current.badges.includes(badge) ? current.badges : [...current.badges, badge] })); },
+    successMoment,
+    celebrate: (moment) => setSuccessMoment({ ...moment, id: `success-${Date.now()}` }),
+    dismissSuccess: () => setSuccessMoment(null),
     resetProgress: () => setState(fallback),
-  }), [state]);
+  }), [state, successMoment]);
 
   return <LearningContext.Provider value={value}>{children}</LearningContext.Provider>;
 }

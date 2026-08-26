@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LearningProvider } from "@/contexts/LearningContext";
+import SuccessMoment from "@/components/SuccessMoment";
 const Home = lazy(() => import("@/pages/Home"));
 const Discover = lazy(() => import("@/pages/Discover"));
 const Learn = lazy(() => import("@/pages/Learn"));
@@ -79,5 +80,5 @@ function Router() {
 }
 
 export default function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><LearningProvider><TooltipProvider><Toaster /><Suspense fallback={<div className="route-loader" role="status">Chargement du repère…</div>}><Router /></Suspense></TooltipProvider></LearningProvider></ThemeProvider></ErrorBoundary>;
+  return <ErrorBoundary><ThemeProvider defaultTheme="light"><LearningProvider><TooltipProvider><Toaster /><SuccessMoment /><Suspense fallback={<div className="route-loader" role="status">Chargement du repère…</div>}><Router /></Suspense></TooltipProvider></LearningProvider></ThemeProvider></ErrorBoundary>;
 }

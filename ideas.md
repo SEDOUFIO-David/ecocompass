@@ -96,3 +96,6 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - Chaque espace personnel V5 possède un artefact Atlas fonctionnel distinct : table de navigation pour le tableau de bord, route cartographiée pour Mon parcours, registre de travail pour le plan d’action, dossier de réalisations pour le portfolio et tableau d’étude pour les défis.
 - Les limites sont formulées du point de vue de l’apprenant : elles expliquent ce qui reste privé, ce qui doit être vérifié ou ce qui demande une source, sans évoquer les choix internes de réalisation.
 - Les lignes, jalons et repères cartographiques servent à relier une décision à sa prochaine trace d’apprentissage ; les informations de marge précisent toujours un contexte, une méthode, une limite ou une prochaine étape.
+- Les tableaux de bord personnels présentent les chiffres comme des **jalons de parcours** : chaque indicateur doit être relié à une trace d’apprentissage, une limite de lecture ou une prochaine action, jamais à une logique de performance isolée.
+- Les zones de progression utilisent des cartouches monospace précisant le périmètre, le statut local et la règle de mise à jour afin d’en faire des objets éditoriaux transparents.
+- Les arrière-plans de héros et parcours emploient une géométrie de boussole, de route ou de carte plutôt que de simples formes décoratives.

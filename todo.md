@@ -64,6 +64,13 @@
 - [x] Relier compétences, cours, projets, opportunités et préparation professionnelle.
 - [x] Vérifier la V5, documenter les limites et sauvegarder la version livrable.
 
+## Expérience de réussite et progression
+
+- [x] Analyser les points de déclenchement des badges, défis et données du plan d’action.
+- [x] Ajouter une animation accessible pour badge débloqué et défi réussi.
+- [x] Ajouter un graphique de progression du plan d’action au tableau de bord.
+- [x] Vérifier le rendu, l’accessibilité et sauvegarder l’amélioration.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

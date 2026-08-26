@@ -3,18 +3,15 @@
  */
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { ArrowUpRight, BookmarkCheck, Compass, FlaskConical, Menu, Moon, Search, ShieldCheck, Sun, UserRound, X } from "lucide-react";
+import { ArrowUpRight, BookmarkCheck, Compass, FlaskConical, Menu, Search, ShieldCheck, UserRound, X } from "lucide-react";
 import BrandMark from "@/components/BrandMark";
 import DisplayPreferences from "@/components/DisplayPreferences";
-import { useTheme } from "@/contexts/ThemeContext";
 
 const nav = [
   ["Découvrir", "/decouvrir"],
   ["Apprendre", "/apprendre"],
   ["Métiers", "/metiers"],
-  ["Formations", "/formations"],
-  ["EcoLab", "/ecolab"],
-  ["Opportunités", "/opportunites"],
+  ["Données", "/togo"],
   ["Orientation", "/orientation"],
 ] as const;
 const secondaryNav = [["Économie réelle", "/economie-reelle"], ["Togo", "/togo"], ["Afrique", "/afrique"], ["Glossaire", "/glossaire"], ["Expliquer une notion", "/expliquer"], ["Défis économiques", "/defis"], ["Fiches de révision", "/fiches"], ["Ressources", "/ressources"], ["Compétences recherchées", "/marche-competences"], ["Établissements", "/etablissements"], ["Professionnels et simulations", "/professionnels"]] as const;
@@ -31,7 +28,6 @@ export function Brand({ compact = false }: { compact?: boolean }) {
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     setMenuOpen(false);
@@ -43,26 +39,25 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F8F5ED] text-[#14333A]">
       <a className="skip-link" href="#main-content">Aller au contenu principal</a>
-      <header className="sticky top-0 z-50 border-b border-[#14333A]/10 bg-[#F8F5ED]/92 backdrop-blur-xl">
-        <div className="container flex h-[74px] items-center justify-between gap-5">
+      <header className="site-header sticky top-0 z-50 border-b border-[#14333A]/10 bg-[#F8F5ED]/92 backdrop-blur-xl">
+        <div className="container flex h-[68px] items-center justify-between gap-4">
           <Brand />
-          <nav className="hidden items-center gap-1 xl:flex" aria-label="Navigation principale">
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigation principale">
             {nav.map(([label, href]) => <Link key={href} href={href} className={`nav-link ${isActive(href) ? "nav-link-active" : ""}`}>{label}</Link>)}
           </nav>
           <div className="flex items-center gap-2">
             <Link href="/recherche" className="grid h-10 w-10 place-items-center rounded-full text-[#14333A] transition hover:bg-[#E8F0EA]" aria-label="Ouvrir la recherche"><Search size={19} strokeWidth={2.2} /></Link>
             <Link href="/favoris" className="hidden h-10 w-10 place-items-center rounded-full text-[#14333A] transition hover:bg-[#E8F0EA] md:grid" aria-label="Ouvrir mes favoris"><BookmarkCheck size={19} strokeWidth={2.1} /></Link>
-            {toggleTheme && <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label={theme === "dark" ? "Activer le mode clair" : "Activer le mode sombre"} title={theme === "dark" ? "Mode clair" : "Mode sombre"}>{theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}</button>}
             <DisplayPreferences />
-            <Link href="/mon-ecocompass" className="header-space-link hidden items-center gap-2 lg:flex">Mon espace <UserRound size={16} /></Link>
-            <button type="button" className="grid h-10 w-10 place-items-center rounded-full bg-[#E8F0EA] xl:hidden" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"} aria-expanded={menuOpen}>{menuOpen ? <X size={21} /> : <Menu size={21} />}</button>
+            <Link href="/mon-ecocompass" className="header-space-link hidden items-center gap-2 xl:flex">Mon espace <UserRound size={16} /></Link>
+            <button type="button" className="grid h-10 w-10 place-items-center rounded-full bg-[#E8F0EA]" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"} aria-expanded={menuOpen}>{menuOpen ? <X size={21} /> : <Menu size={21} />}</button>
           </div>
         </div>
-        {menuOpen && <nav className="border-t border-[#14333A]/10 bg-[#F8F5ED] px-4 py-4 xl:hidden" aria-label="Navigation mobile">
-          <div className="mx-auto flex max-w-2xl flex-col gap-1">
-            {nav.map(([label, href]) => <Link key={href} href={href} className={`rounded-xl px-4 py-3 text-base font-medium ${isActive(href) ? "bg-[#E1EEE7] text-[#0E6356]" : "hover:bg-[#F0ECE1]"}`}>{label}</Link>)}
-            <p className="mt-3 px-4 text-[.62rem] font-mono uppercase tracking-[.12em] text-[#71827A]">Approfondir</p>{secondaryNav.map(([label, href]) => <Link key={href} href={href} className={`rounded-xl px-4 py-2 text-sm font-medium ${isActive(href) ? "bg-[#E1EEE7] text-[#0E6356]" : "hover:bg-[#F0ECE1]"}`}>{label}</Link>)}
-          <div className="mt-2 grid gap-2 sm:grid-cols-2"><Link href="/mon-ecocompass" className="flex items-center gap-2 border border-[#14333A]/12 px-4 py-3 font-medium"><UserRound size={17} /> Mon espace</Link><Link href="/mon-parcours" className="flex items-center gap-2 border border-[#14333A]/12 px-4 py-3 font-medium"><Compass size={17} /> Mon parcours</Link><Link href="/plan-action" className="flex items-center gap-2 border border-[#14333A]/12 px-4 py-3 font-medium"><FlaskConical size={17} /> Mon plan d’action</Link><Link href="/portfolio" className="flex items-center gap-2 border border-[#14333A]/12 px-4 py-3 font-medium"><BookmarkCheck size={17} /> Mon portfolio</Link><Link href="/favoris" className="flex items-center gap-2 border border-[#14333A]/12 px-4 py-3 font-medium"><BookmarkCheck size={17} /> Mes favoris</Link><Link href="/a-propos" className="flex items-center gap-2 border border-[#14333A]/12 px-4 py-3 font-medium"><ShieldCheck size={17} /> À propos</Link></div>
+        {menuOpen && <nav className="site-menu absolute left-0 right-0 top-full border-t border-[#14333A]/10 bg-[#F8F5ED]/98 px-4 py-5 shadow-2xl" aria-label="Navigation détaillée">
+          <div className="container menu-grid">
+            <section><p className="menu-label">Parcours essentiels</p><div className="menu-primary-links">{nav.map(([label, href]) => <Link key={href} href={href} className={`menu-primary-link ${isActive(href) ? "menu-primary-link-active" : ""}`}>{label}<ArrowUpRight size={15} /></Link>)}</div></section>
+            <section><p className="menu-label">Ressources et analyse</p><div className="menu-secondary-links">{secondaryNav.map(([label, href]) => <Link key={href} href={href} className={isActive(href) ? "menu-secondary-link-active" : ""}>{label}</Link>)}</div></section>
+            <section className="menu-personal"><p className="menu-label">Mon EcoCompass</p><Link href="/mon-ecocompass"><UserRound size={17} /> Tableau personnel <ArrowUpRight size={15} /></Link><Link href="/mon-parcours"><Compass size={17} /> Mon parcours <ArrowUpRight size={15} /></Link><Link href="/plan-action"><FlaskConical size={17} /> Plan d’action <ArrowUpRight size={15} /></Link><Link href="/favoris"><BookmarkCheck size={17} /> Mes favoris <ArrowUpRight size={15} /></Link><Link href="/a-propos"><ShieldCheck size={17} /> Méthode EcoCompass <ArrowUpRight size={15} /></Link></section>
           </div>
         </nav>}
       </header>

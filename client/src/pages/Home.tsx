@@ -9,9 +9,9 @@ import { useLearning } from "@/contexts/LearningContext";
 import { courses } from "@/data/ecocompass";
 
 const actionCards = [
-  { icon: Compass, label: "01 · Démarrer", title: "Comprendre les bases", text: "Des repères simples pour lire une situation économique avec méthode.", href: "/decouvrir", accent: "bg-[#E4EEE7]" },
-  { icon: BookOpenText, label: "02 · Approfondir", title: "Suivre un cours", text: "Des notions structurées, des exemples et des exercices à votre rythme.", href: "/apprendre", accent: "bg-[#E8EDF0]" },
-  { icon: BriefcaseBusiness, label: "03 · Explorer", title: "Examiner des pistes", text: "Métiers, compétences et formations à comparer avec discernement.", href: "/metiers", accent: "bg-[#F4E8D9]" },
+  { icon: Compass, label: "01 · Point de départ", title: "Comprendre les bases", text: "Des repères simples pour lire une situation économique avec méthode.", href: "/decouvrir", tone: "route-lead" },
+  { icon: BookOpenText, label: "02 · Lecture guidée", title: "Suivre un cours", text: "Des notions structurées, des exemples et des exercices à votre rythme.", href: "/apprendre", tone: "route-study" },
+  { icon: BriefcaseBusiness, label: "03 · Mise en perspective", title: "Explorer des pistes", text: "Métiers, compétences et formations à comparer avec discernement.", href: "/metiers", tone: "route-orient" },
 ];
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
 
     <section className="section-space bg-white">
       <div className="container"><div className="section-heading"><div><p className="eyebrow">Trois entrées, un même parcours</p><h2>Choisissez votre point de départ.</h2></div><p>Chaque étape mène vers des cours, des cas pratiques ou des pistes à examiner.</p></div>
-      <div className="mt-9 grid gap-4 lg:grid-cols-3">{actionCards.map(({ icon: Icon, label, title, text, href, accent }) => <Link href={href} className="action-card" key={title}><div className={`grid h-12 w-12 place-items-center rounded-2xl ${accent} text-[#0E6356]`}><Icon size={23} /></div><p className="eyebrow mt-7">{label}</p><h3>{title}</h3><p>{text}</p><span className="card-arrow">Explorer <ArrowRight size={16} /></span></Link>)}</div></div>
+      <div className="home-route-map mt-9">{actionCards.map(({ icon: Icon, label, title, text, href, tone }, index) => <Link href={href} className={`home-route-card ${tone}`} key={title}><div className="home-route-marker"><Icon size={20} /></div><div><p className="eyebrow">{label}</p><h3>{title}</h3><p>{text}</p></div><span className="card-arrow">{index === 0 ? "Commencer les bases" : index === 1 ? "Suivre le parcours" : "Comparer les pistes"} <ArrowRight size={16} /></span></Link>)}</div></div>
     </section>
 
     <section className="section-space bg-[#EDF2EC]">

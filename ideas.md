@@ -109,3 +109,6 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - Les répertoires métier structurent chaque famille comme une **étape de cartographie** : une piste d’entrée prioritaire est suivie de pistes à comparer, avec une marge qui relie explicitement compétences, formations et projets.
 - Le bleu nuit porte les encadrés d’autorité et les pistes d’entrée ; le vert Atlas reste réservé aux jalons, actions et données essentielles ; l’ocre reste limité aux prudences méthodologiques et repères de terrain.
 - La boussole EcoCompass devient un repère de chapitre et de prochaine piste dans les pages intérieures, et non un simple symbole d’en-tête.
+- Les données publiques sont traitées comme un **dossier de lecture** : situer la valeur, vérifier source et période, puis lire la limite avant toute comparaison ; aucun indicateur n’est présenté comme un KPI isolé.
+- Les appels à l’action nomment l’apprentissage attendu — commencer les bases, suivre un parcours, lire une notion, comparer des pistes ou consulter une série — plutôt que d’employer des verbes génériques.
+- La navigation principale privilégie les parcours essentiels ; le menu détaillé organise les ressources, l’analyse et l’espace personnel en groupes de tâches explicites.

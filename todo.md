@@ -141,6 +141,13 @@
 - [x] Ajouter ou vérifier les favoris sur les fiches métier et les cours.
 - [x] Tester les interactions, les données et publier la mise à jour.
 
+## Revue de références et interface professionnelle
+
+- [x] Auditer les écrans prioritaires et étudier des références publiques de données et de pédagogie.
+- [x] Formaliser les principes retenus pour la hiérarchie, la navigation, les visualisations et les surfaces.
+- [x] Recomposer les fondations visuelles et les écrans prioritaires sans retirer de fonctionnalités.
+- [x] Vérifier la lisibilité, le responsive et publier la refonte.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

@@ -1296,6 +1296,186 @@
   }
 }
 
+/* Application UI/UX : contrôles résilients, retours d’état explicites et lecture qui tient au zoom. */
+:where(h1, h2, h3, p, a, button, label, small, td, th, .eyebrow, .data-trace, .level-chip, .skill-mini) {
+  overflow-wrap: anywhere;
+}
+
+:where(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+:where(input, select, textarea, button) {
+  font: inherit;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #b67835;
+  outline-offset: 3px;
+}
+
+.ui-control-bar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: space-between;
+}
+
+.ui-filter-controls {
+  align-items: end;
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: minmax(190px, 1.35fr) minmax(130px, .72fr) minmax(150px, .9fr) auto;
+  width: min(100%, 800px);
+}
+
+.filter-field {
+  color: #486760;
+  display: grid;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .62rem;
+  font-weight: 700;
+  gap: .32rem;
+  letter-spacing: .045em;
+  min-width: 0;
+  text-transform: uppercase;
+}
+
+.filter-field > span {
+  align-items: center;
+  display: inline-flex;
+  gap: .35rem;
+}
+
+.filter-field input,
+.filter-field select {
+  appearance: none;
+  background: #fbfdf9;
+  border: 1px solid #afc7ba;
+  border-radius: .32rem;
+  color: #163a37;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: .86rem;
+  font-weight: 500;
+  min-height: 44px;
+  min-width: 0;
+  padding: .65rem .72rem;
+  text-transform: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  width: 100%;
+}
+
+.filter-field select {
+  background-image: linear-gradient(45deg, transparent 50%, #0e6356 50%), linear-gradient(135deg, #0e6356 50%, transparent 50%);
+  background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px;
+  padding-right: 2rem;
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+  background-color: #fff;
+  border-color: #0e6356;
+  box-shadow: 0 0 0 3px rgb(14 99 86 / 13%);
+  outline: none;
+}
+
+.filter-reset {
+  background: transparent;
+  border: 1px solid #b7cbbf;
+  border-radius: .32rem;
+  color: #0e6356;
+  font-size: .75rem;
+  font-weight: 700;
+  min-height: 44px;
+  padding: .55rem .75rem;
+  white-space: nowrap;
+}
+
+.filter-reset:hover {
+  background: #e8f1ea;
+  border-color: #0e6356;
+}
+
+.dark .filter-field {
+  color: #c5dfd1;
+}
+
+.dark .filter-field input,
+.dark .filter-field select {
+  background-color: #163b3b;
+  border-color: #63867e;
+  color: #f0f8f3;
+}
+
+.dark .filter-field select {
+  background-image: linear-gradient(45deg, transparent 50%, #c7ebd3 50%), linear-gradient(135deg, #c7ebd3 50%, transparent 50%);
+}
+
+.dark .filter-field input:focus,
+.dark .filter-field select:focus {
+  background-color: #1d4847;
+  border-color: #bce4c9;
+  box-shadow: 0 0 0 3px rgb(188 228 201 / 18%);
+}
+
+.dark .filter-reset {
+  border-color: #759e8a;
+  color: #d7f0df;
+}
+
+.dark .filter-reset:hover {
+  background: #234e4b;
+  border-color: #c7ebd3;
+}
+
+.preferences-live-status {
+  background: #edf5ee;
+  border-left: 2px solid #0e6356;
+  color: #31544a;
+  font-size: .72rem;
+  line-height: 1.45;
+  margin: 0 0 1.1rem;
+  padding: .62rem .72rem;
+}
+
+.dark .preferences-live-status {
+  background: #1b4443;
+  border-color: #bce4c9;
+  color: #e1f1e6;
+}
+
+/* Système typographique final : Source Serif 4 pour le récit, Source Sans 3 pour l’interface, IBM Plex Mono pour les repères. */
+:where(h1, h2, h3, .font-display) {
+  font-family: "Source Serif 4", Georgia, serif !important;
+}
+
+:where(body, button, input, select, textarea) {
+  font-family: "Source Sans 3", Arial, sans-serif;
+}
+
+:where(.font-mono, .eyebrow, .data-trace, .level-chip, .course-number, .chapter-number, .menu-label) {
+  font-family: "IBM Plex Mono", monospace !important;
+}
+
+@media (min-width: 1024px) {
+  .ui-control-bar {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 700px) {
+  .ui-filter-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-reset {
+    width: 100%;
+  }
+}
+
 @media (max-width: 1023px) {
   .menu-grid {
     grid-template-columns: 1fr 1.25fr;

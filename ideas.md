@@ -112,3 +112,4 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - Les données publiques sont traitées comme un **dossier de lecture** : situer la valeur, vérifier source et période, puis lire la limite avant toute comparaison ; aucun indicateur n’est présenté comme un KPI isolé.
 - Les appels à l’action nomment l’apprentissage attendu — commencer les bases, suivre un parcours, lire une notion, comparer des pistes ou consulter une série — plutôt que d’employer des verbes génériques.
 - La navigation principale privilégie les parcours essentiels ; le menu détaillé organise les ressources, l’analyse et l’espace personnel en groupes de tâches explicites.
+- Le système typographique final est unique : **Source Serif 4** porte titres et dossiers de lecture, **Source Sans 3** porte l’interface et les explications, **IBM Plex Mono** porte les sources, statuts et repères. Fraunces et Inter ne sont plus utilisés comme système concurrent.

@@ -43,7 +43,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="container flex h-[68px] items-center justify-between gap-4">
           <Brand />
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigation principale">
-            {nav.map(([label, href]) => <Link key={href} href={href} className={`nav-link ${isActive(href) ? "nav-link-active" : ""}`}>{label}</Link>)}
+            {nav.map(([label, href]) => <Link key={href} href={href} className={`nav-link ${isActive(href) ? "nav-link-active" : ""}`} aria-current={isActive(href) ? "page" : undefined}>{label}</Link>)}
           </nav>
           <div className="flex items-center gap-2">
             <Link href="/recherche" className="grid h-10 w-10 place-items-center rounded-full text-[#14333A] transition hover:bg-[#E8F0EA]" aria-label="Ouvrir la recherche"><Search size={19} strokeWidth={2.2} /></Link>
@@ -55,8 +55,8 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
         </div>
         {menuOpen && <nav className="site-menu absolute left-0 right-0 top-full border-t border-[#14333A]/10 bg-[#F8F5ED]/98 px-4 py-5 shadow-2xl" aria-label="Navigation détaillée">
           <div className="container menu-grid">
-            <section><p className="menu-label">Parcours essentiels</p><div className="menu-primary-links">{nav.map(([label, href]) => <Link key={href} href={href} className={`menu-primary-link ${isActive(href) ? "menu-primary-link-active" : ""}`}>{label}<ArrowUpRight size={15} /></Link>)}</div></section>
-            <section><p className="menu-label">Ressources et analyse</p><div className="menu-secondary-links">{secondaryNav.map(([label, href]) => <Link key={href} href={href} className={isActive(href) ? "menu-secondary-link-active" : ""}>{label}</Link>)}</div></section>
+            <section><p className="menu-label">Parcours essentiels</p><div className="menu-primary-links">{nav.map(([label, href]) => <Link key={href} href={href} className={`menu-primary-link ${isActive(href) ? "menu-primary-link-active" : ""}`} aria-current={isActive(href) ? "page" : undefined}>{label}<ArrowUpRight size={15} /></Link>)}</div></section>
+            <section><p className="menu-label">Ressources et analyse</p><div className="menu-secondary-links">{secondaryNav.map(([label, href]) => <Link key={href} href={href} className={isActive(href) ? "menu-secondary-link-active" : ""} aria-current={isActive(href) ? "page" : undefined}>{label}</Link>)}</div></section>
             <section className="menu-personal"><p className="menu-label">Mon EcoCompass</p><Link href="/mon-ecocompass"><UserRound size={17} /> Tableau personnel <ArrowUpRight size={15} /></Link><Link href="/mon-parcours"><Compass size={17} /> Mon parcours <ArrowUpRight size={15} /></Link><Link href="/plan-action"><FlaskConical size={17} /> Plan d’action <ArrowUpRight size={15} /></Link><Link href="/favoris"><BookmarkCheck size={17} /> Mes favoris <ArrowUpRight size={15} /></Link><Link href="/a-propos"><ShieldCheck size={17} /> Méthode EcoCompass <ArrowUpRight size={15} /></Link></section>
           </div>
         </nav>}

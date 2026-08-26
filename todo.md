@@ -154,6 +154,13 @@
 - [x] Sélectionner les principes compatibles avec l’identité et l’accessibilité d’EcoCompass.
 - [x] Documenter les adaptations prioritaires proposées pour les prochaines évolutions.
 
+## Application concrète du référentiel UI/UX
+
+- [x] Auditer les composants, les écrans et les états interactifs avec les critères de résilience UI/UX.
+- [x] Unifier les composants, espacements, hiérarchies et états d’action sur les écrans prioritaires.
+- [x] Renforcer le retour à la ligne, le focus, le zoom, les contrôles et les messages d’état.
+- [x] Vérifier les thèmes, le responsive et publier une passe UI/UX visible.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

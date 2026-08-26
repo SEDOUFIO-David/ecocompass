@@ -1,4 +1,7 @@
 import { cn } from "@/lib/utils";
+/**
+ * Design: Atlas académique vivant — toute erreur doit rester lisible, sobre et permettre de reprendre le parcours.
+ */
 import { AlertTriangle, RotateCcw } from "lucide-react";
 import { Component, ReactNode } from "react";
 
@@ -19,6 +22,10 @@ class ErrorBoundary extends Component<Props, State> {
 
   static getDerivedStateFromError(error: Error): State {
     return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error("EcoCompass render error", error, errorInfo);
   }
 
   render() {

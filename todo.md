@@ -50,6 +50,11 @@
 - [ ] Extraire le message détaillé associé au compteur d’erreur affiché dans l’aperçu.
 - [ ] Corriger la cause du rendu intégré puis contrôler le panneau dans l’interface.
 
+## Diagnostic persistant de l’aperçu intégré
+
+- [x] Récupérer l’erreur détaillée du compteur rouge et comparer le comportement de l’aperçu avec le domaine publié.
+- [x] Appliquer ou documenter le correctif d’intégration, puis valider les deux accès.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

@@ -101,3 +101,5 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - Les arrière-plans de héros et parcours emploient une géométrie de boussole, de route ou de carte plutôt que de simples formes décoratives.
 - Les modules de l’espace personnel sont des jalons reliés d’une même trajectoire Atlas : chaque bloc fait apparaître une prochaine trace concrète, une limite de lecture ou une action de continuation.
 - Les échéances, rappels, limites et éléments à vérifier empruntent le traitement de note de terrain ocre, afin de distinguer visuellement le contexte et la prudence de la progression en vert Atlas.
+- Le système visuel est resserré vers un dossier éditorial professionnel : Source Serif pour les titres, Source Sans pour la lecture courante, géométrie sobre, surfaces moins arrondies et langage plus direct.
+- Les symboles de marque et les illustrations fonctionnelles sont vectoriels et inclus dans le code afin que l’identité reste fiable après export vers un hébergeur tiers.

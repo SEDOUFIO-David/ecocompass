@@ -91,6 +91,13 @@
 - [x] Ajouter une redirection de publication vers l’application pour les routes internes.
 - [x] Vérifier le build et transférer le correctif vers GitHub.
 
+## Refonte professionnelle de l’interface
+
+- [x] Auditer le logo, les styles, la typographie, les textes et les écrans prioritaires.
+- [x] Définir un système visuel plus lisible, sobre et cohérent.
+- [x] Corriger les assets de marque et recomposer les écrans prioritaires sans retirer de fonctionnalités.
+- [x] Vérifier les contrastes, le responsive et transférer la refonte vers GitHub.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

@@ -6,9 +6,11 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 type FavoriteType = "course" | "career" | "glossary" | "case" | "project" | "formation" | "opportunity" | "institution";
 export type FavoriteItem = { id: string; type: FavoriteType; title: string; href: string };
 type QuizScore = { score: number; total: number; completedAt: string };
-export type PersonalProfile = { name: string; level: string; interests: string[]; goal: string };
-export type PersonalProject = { id: string; templateSlug: string; title: string; completedAt?: string; reflection?: string };
-type LearningState = { started: string[]; completed: string[]; quizScores: Record<string, QuizScore>; lastCourse?: string; favorites: FavoriteItem[]; profile: PersonalProfile; projects: PersonalProject[]; activePath?: string };
+export type PersonalProfile = { name: string; level: string; interests: string[]; goal: string; specialization?: string; certifications?: string[] };
+export type PersonalProject = { id: string; templateSlug: string; title: string; completedAt?: string; reflection?: string; status?: "commencé" | "en-cours" | "terminé"; portfolio?: boolean; deliverable?: string };
+export type PersonalGoal = { id: string; title: string; timeframe: "quotidien" | "hebdomadaire" | "mensuel" | "long-terme"; completed: boolean };
+export type ActionTask = { id: string; title: string; dueDate?: string; completed: boolean; source?: "manual" | "path" };
+type LearningState = { started: string[]; completed: string[]; quizScores: Record<string, QuizScore>; lastCourse?: string; favorites: FavoriteItem[]; profile: PersonalProfile; projects: PersonalProject[]; activePath?: string; goals: PersonalGoal[]; actionTasks: ActionTask[]; badges: string[]; portfolioIntro: string };
 type LearningContextValue = LearningState & {
   startCourse: (slug: string) => void;
   completeCourse: (slug: string) => void;
@@ -18,11 +20,20 @@ type LearningContextValue = LearningState & {
   updateProfile: (profile: Partial<PersonalProfile>) => void;
   saveProject: (project: Omit<PersonalProject, "id"> & { id?: string }) => void;
   setActivePath: (slug?: string) => void;
+  addGoal: (goal: Omit<PersonalGoal, "id" | "completed">) => void;
+  toggleGoal: (id: string) => void;
+  removeGoal: (id: string) => void;
+  addTask: (task: Omit<ActionTask, "id" | "completed">) => void;
+  updateTask: (id: string, task: Partial<Omit<ActionTask, "id">>) => void;
+  toggleTask: (id: string) => void;
+  removeTask: (id: string) => void;
+  setPortfolioIntro: (value: string) => void;
+  awardBadge: (badge: string) => void;
   resetProgress: () => void;
 };
 
 const STORAGE_KEY = "ecocompass-learning-v2";
-const fallback: LearningState = { started: [], completed: [], quizScores: {}, favorites: [], profile: { name: "", level: "Je découvre l’économie", interests: [], goal: "" }, projects: [] };
+const fallback: LearningState = { started: [], completed: [], quizScores: {}, favorites: [], profile: { name: "", level: "Je découvre l’économie", interests: [], goal: "", certifications: [] }, projects: [], goals: [], actionTasks: [], badges: [], portfolioIntro: "" };
 const LearningContext = createContext<LearningContextValue | null>(null);
 
 function loadState(): LearningState {
@@ -30,7 +41,7 @@ function loadState(): LearningState {
   try {
     const parsed = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || "null");
     if (!parsed || !Array.isArray(parsed.started) || !Array.isArray(parsed.completed) || !Array.isArray(parsed.favorites)) return fallback;
-    return { ...fallback, ...parsed, profile: { ...fallback.profile, ...(parsed.profile || {}) }, projects: Array.isArray(parsed.projects) ? parsed.projects : [] };
+    return { ...fallback, ...parsed, profile: { ...fallback.profile, ...(parsed.profile || {}), certifications: Array.isArray(parsed.profile?.certifications) ? parsed.profile.certifications : [] }, projects: Array.isArray(parsed.projects) ? parsed.projects : [], goals: Array.isArray(parsed.goals) ? parsed.goals : [], actionTasks: Array.isArray(parsed.actionTasks) ? parsed.actionTasks : [], badges: Array.isArray(parsed.badges) ? parsed.badges : [] };
   } catch { return fallback; }
 }
 
@@ -47,13 +58,22 @@ export function LearningProvider({ children }: { children: ReactNode }) {
   const value = useMemo<LearningContextValue>(() => ({
     ...state,
     startCourse: (slug) => setState((current) => ({ ...current, started: current.started.includes(slug) ? current.started : [...current.started, slug], lastCourse: slug })),
-    completeCourse: (slug) => setState((current) => ({ ...current, started: current.started.includes(slug) ? current.started : [...current.started, slug], completed: current.completed.includes(slug) ? current.completed : [...current.completed, slug], lastCourse: slug })),
-    saveQuizScore: (slug, score, total) => setState((current) => ({ ...current, quizScores: { ...current.quizScores, [slug]: { score, total, completedAt: new Date().toISOString() } } })),
+    completeCourse: (slug) => setState((current) => { const completed = current.completed.includes(slug) ? current.completed : [...current.completed, slug]; const badges = completed.length ? (current.badges.includes("Fondamentaux de l’économie") ? current.badges : [...current.badges, "Fondamentaux de l’économie"]) : current.badges; return { ...current, started: current.started.includes(slug) ? current.started : [...current.started, slug], completed, badges, lastCourse: slug }; }),
+    saveQuizScore: (slug, score, total) => setState((current) => ({ ...current, quizScores: { ...current.quizScores, [slug]: { score, total, completedAt: new Date().toISOString() } }, badges: current.badges.includes("Premier quiz") ? current.badges : [...current.badges, "Premier quiz"] })),
     toggleFavorite: (item) => setState((current) => ({ ...current, favorites: current.favorites.some((favorite) => favorite.id === item.id) ? current.favorites.filter((favorite) => favorite.id !== item.id) : [...current.favorites, item] })),
     isFavorite: (id) => state.favorites.some((favorite) => favorite.id === id),
     updateProfile: (profile) => setState((current) => ({ ...current, profile: { ...current.profile, ...profile } })),
     saveProject: (project) => setState((current) => ({ ...current, projects: current.projects.some((item) => item.id === project.id) ? current.projects.map((item) => item.id === project.id ? { ...item, ...project } : item) : [...current.projects, { ...project, id: project.id || `${project.templateSlug}-${Date.now()}` }] })),
     setActivePath: (slug) => setState((current) => ({ ...current, activePath: slug })),
+    addGoal: (goal) => setState((current) => ({ ...current, goals: [...current.goals, { ...goal, id: `goal-${Date.now()}`, completed: false }] })),
+    toggleGoal: (id) => setState((current) => ({ ...current, goals: current.goals.map((goal) => goal.id === id ? { ...goal, completed: !goal.completed } : goal) })),
+    removeGoal: (id) => setState((current) => ({ ...current, goals: current.goals.filter((goal) => goal.id !== id) })),
+    addTask: (task) => setState((current) => ({ ...current, actionTasks: [...current.actionTasks, { ...task, id: `task-${Date.now()}`, completed: false }] })),
+    updateTask: (id, task) => setState((current) => ({ ...current, actionTasks: current.actionTasks.map((item) => item.id === id ? { ...item, ...task } : item) })),
+    toggleTask: (id) => setState((current) => ({ ...current, actionTasks: current.actionTasks.map((task) => task.id === id ? { ...task, completed: !task.completed } : task) })),
+    removeTask: (id) => setState((current) => ({ ...current, actionTasks: current.actionTasks.filter((task) => task.id !== id) })),
+    setPortfolioIntro: (value) => setState((current) => ({ ...current, portfolioIntro: value })),
+    awardBadge: (badge) => setState((current) => ({ ...current, badges: current.badges.includes(badge) ? current.badges : [...current.badges, badge] })),
     resetProgress: () => setState(fallback),
   }), [state]);
 

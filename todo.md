@@ -55,6 +55,15 @@
 - [x] Récupérer l’erreur détaillée du compteur rouge et comparer le comportement de l’aperçu avec le domaine publié.
 - [x] Appliquer ou documenter le correctif d’intégration, puis valider les deux accès.
 
+## EcoCompass V5
+
+- [x] Finaliser l’analyse V5 et inventorier les modules V4 à réutiliser.
+- [x] Étendre le profil et le tableau de bord avec objectifs, échéances et actions locales.
+- [x] Créer Mon parcours personnalisé et le plan d’action modifiable.
+- [x] Étendre EcoLab, les projets et le portfolio avec niveaux, livrables et réalisations.
+- [x] Relier compétences, cours, projets, opportunités et préparation professionnelle.
+- [x] Vérifier la V5, documenter les limites et sauvegarder la version livrable.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

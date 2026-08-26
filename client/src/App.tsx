@@ -40,6 +40,7 @@ const ActionPlan = lazy(() => import("@/pages/ActionPlan"));
 const Portfolio = lazy(() => import("@/pages/Portfolio"));
 const ExplainEconomy = lazy(() => import("@/pages/ExplainEconomy"));
 const Challenges = lazy(() => import("@/pages/Challenges"));
+const About = lazy(() => import("@/pages/About"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function Router() {
@@ -75,10 +76,11 @@ function Router() {
     <Route path="/portfolio" component={Portfolio} />
     <Route path="/expliquer" component={ExplainEconomy} />
     <Route path="/defis" component={Challenges} />
+    <Route path="/a-propos" component={About} />
     <Route component={NotFound} />
   </Switch>;
 }
 
 export default function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><LearningProvider><TooltipProvider><Toaster /><SuccessMoment /><Suspense fallback={<div className="route-loader" role="status">Chargement du repère…</div>}><Router /></Suspense></TooltipProvider></LearningProvider></ThemeProvider></ErrorBoundary>;
+  return <ErrorBoundary><ThemeProvider defaultTheme="light" switchable><LearningProvider><TooltipProvider><Toaster /><SuccessMoment /><Suspense fallback={<div className="route-loader" role="status">Chargement du repère…</div>}><Router /></Suspense></TooltipProvider></LearningProvider></ThemeProvider></ErrorBoundary>;
 }

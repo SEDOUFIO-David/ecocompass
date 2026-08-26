@@ -98,6 +98,13 @@
 - [x] Corriger les assets de marque et recomposer les écrans prioritaires sans retirer de fonctionnalités.
 - [x] Vérifier les contrastes, le responsive et transférer la refonte vers GitHub.
 
+## Crédibilité institutionnelle et confort visuel
+
+- [x] Auditer la navigation, le thème et les contenus méthodologiques existants.
+- [x] Créer une page À propos détaillée avec une méthodologie transparente.
+- [x] Ajouter un mode sombre mémorisé et des interactions de survol accessibles.
+- [x] Vérifier les deux thèmes, le responsive et synchroniser la mise à jour.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

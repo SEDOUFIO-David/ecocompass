@@ -85,6 +85,12 @@
 - [x] Créer le commit initial « Initial commit — EcoCompass V5 » et transférer les fichiers nécessaires.
 - [x] Contrôler la présence des fichiers essentiels dans le dépôt distant.
 
+## Routage Netlify
+
+- [x] Vérifier la cause de l’erreur 404 lors de l’ouverture directe d’une route React.
+- [x] Ajouter une redirection de publication vers l’application pour les routes internes.
+- [x] Vérifier le build et transférer le correctif vers GitHub.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

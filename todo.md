@@ -148,6 +148,12 @@
 - [x] Recomposer les fondations visuelles et les écrans prioritaires sans retirer de fonctionnalités.
 - [x] Vérifier la lisibilité, le responsive et publier la refonte.
 
+## Référentiel UI/UX externe
+
+- [x] Examiner la documentation du référentiel ui-ux-pro-max sans exécuter de code tiers.
+- [x] Sélectionner les principes compatibles avec l’identité et l’accessibilité d’EcoCompass.
+- [x] Documenter les adaptations prioritaires proposées pour les prochaines évolutions.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

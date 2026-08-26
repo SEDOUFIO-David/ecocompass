@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
+import "@/theme-overrides.css";
 
 export type Theme = "light" | "dark";
 export type DisplayScale = "standard" | "large";

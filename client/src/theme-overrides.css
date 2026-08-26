@@ -1,0 +1,100 @@
+/* Design: Atlas académique vivant — contraste durable des surfaces pédagogiques en thème sombre. */
+
+.dark .learning-atlas {
+  color: #eaf4ed;
+}
+
+.dark .learning-atlas::before {
+  background: linear-gradient(#a8d4ba, #517c6d 87%, transparent);
+}
+
+.dark .course-chapter .chapter-margin {
+  border-color: #446663;
+}
+
+.dark .course-chapter .chapter-margin h2 {
+  color: #f5faf6 !important;
+}
+
+.dark .course-chapter .chapter-margin p:not(.eyebrow) {
+  color: #c6d8d0 !important;
+}
+
+.dark .chapter-number {
+  background: #17383a;
+  border-color: #8ab8a0;
+  color: #c8e6d1;
+}
+
+.dark .chapter-source {
+  border-color: #597974;
+  color: #c4e2ce;
+}
+
+.dark .chapter-source:hover {
+  background: #21494a;
+  border-color: #a0cbb1;
+}
+
+.dark .course-card,
+.dark .course-card-featured {
+  background: #18383a !important;
+  border-color: #51726f !important;
+  box-shadow: none !important;
+}
+
+.dark .course-card:hover {
+  background: #1d4444 !important;
+  border-color: #a1d0b4 !important;
+  box-shadow: 0 14px 28px rgb(0 0 0 / 22%) !important;
+}
+
+.dark .course-card h2 {
+  color: #f7fbf8 !important;
+}
+
+.dark .course-card > p:not(.font-mono) {
+  color: #d1e0d8 !important;
+}
+
+.dark .course-card > p.font-mono {
+  color: #b9dcc7 !important;
+}
+
+.dark .course-number {
+  color: #b3dcc4;
+}
+
+.dark .level-chip {
+  background: #29534d;
+  color: #d9efe1;
+}
+
+.dark .course-card-footer {
+  color: #c6dad0;
+}
+
+.dark .course-card-footer .card-arrow,
+.dark .course-card-footer svg {
+  color: #bce4c9;
+}
+
+.dark .filter-field {
+  background: #17383a;
+  border-color: #51726f;
+  color: #d4e7dc;
+}
+
+.dark .filter-field select {
+  background: #102b2d;
+  color: #f5faf6;
+}
+
+.dark .empty-state {
+  background: #17383a;
+  border-color: #51726f;
+}
+
+.dark .empty-state p {
+  color: #c8d9d1;
+}

@@ -118,6 +118,12 @@
 - [x] Ajouter une transition de thème fluide qui respecte la réduction de mouvement.
 - [x] Vérifier les préférences, synchroniser et publier la mise à jour.
 
+## Contraste des cartes en mode sombre
+
+- [x] Auditer les cartes de cours et les surfaces claires signalées sur les pages concernées.
+- [x] Corriger les contrastes internes des cartes et généraliser les règles de surface sombre.
+- [x] Vérifier les cours et cartes en clair et en sombre, puis publier le correctif.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

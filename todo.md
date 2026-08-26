@@ -34,3 +34,8 @@
 
 - [x] Vérifier les interactions, la persistance locale, l’accessibilité et le responsive.
 - [x] Mettre à jour le rapport V2, documenter les limites et sauvegarder un point de contrôle final.
+
+## Correctif d’ouverture
+
+- [x] Identifier la cause de l’erreur qui empêche le site de se charger.
+- [x] Appliquer le correctif, reconstruire et vérifier l’ouverture publique.

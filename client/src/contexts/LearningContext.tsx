@@ -3,7 +3,7 @@
  */
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
-type FavoriteType = "course" | "career" | "glossary" | "case" | "project";
+type FavoriteType = "course" | "career" | "glossary" | "case" | "project" | "formation" | "opportunity" | "institution";
 export type FavoriteItem = { id: string; type: FavoriteType; title: string; href: string };
 type QuizScore = { score: number; total: number; completedAt: string };
 export type PersonalProfile = { name: string; level: string; interests: string[]; goal: string };

@@ -59,3 +59,13 @@
 - [x] Étendre les simulations, études de cas en mode apprenant et projets pratiques.
 - [x] Ajouter portfolio local, système de compétences, recherche et navigation V3.
 - [x] Vérifier la V3, mettre à jour le rapport final et sauvegarder la version livrable.
+
+## EcoCompass V4
+
+- [x] Finaliser l’analyse V4 et inventorier les composants V3 réutilisables.
+- [x] Étendre le répertoire des métiers et les filtres comparatifs sans remplacer les fiches existantes.
+- [x] Ajouter formations, parcours études-vers-métiers et marché des compétences.
+- [x] Créer un répertoire d’établissements fondé uniquement sur des informations et liens vérifiables.
+- [x] Ajouter les opportunités avec liens officiels, sources et statuts de vérification.
+- [x] Relier profil, orientation, recherche et navigation aux nouveaux espaces V4.
+- [x] Vérifier la V4, documenter les limites et sauvegarder la version livrable.

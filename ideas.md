@@ -90,3 +90,6 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - Chaque espace V3 de pratique expose une trajectoire fonctionnelle reliant des contenus réels — cours, données, hypothèses, projets, compétences ou métiers — avec jalons et liens plutôt qu’avec des ornements isolés.
 - Les héros des espaces V3 se distinguent par un artefact lié à leur usage : statut et source pour EcoLab, étapes d’enquête pour les projets et cas, chaîne cours → projet → métier pour les compétences.
 - Les données de démonstration sont affichées comme des cartouches éditoriaux : statut, unité, période, source fictive et limite restent visibles près des graphiques.
+- Chaque répertoire majeur maintient une **marge éditoriale active** : statut de source, repère de terrain, étape suivante ou contexte méthodologique accompagnent les filtres et les cartes.
+- Les pages V4 portent un artefact d’usage distinct : itinéraire études-vers-métiers, dossier source d’établissement, point de contrôle de portail officiel ou carnet de simulation professionnelle.
+- L’ocre est exclusivement réservé aux repères de terrain Togo/Afrique, aux avertissements de vérification et aux limites méthodologiques ; les catégories générales restent vert atlas ou ivoire.

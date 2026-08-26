@@ -11,12 +11,12 @@ const nav = [
   ["Découvrir", "/decouvrir"],
   ["Apprendre", "/apprendre"],
   ["Métiers", "/metiers"],
+  ["Formations", "/formations"],
   ["EcoLab", "/ecolab"],
-  ["Économie réelle", "/economie-reelle"],
-  ["Togo", "/togo"],
-  ["Glossaire", "/glossaire"],
+  ["Opportunités", "/opportunites"],
   ["Orientation", "/orientation"],
 ] as const;
+const secondaryNav = [["Économie réelle", "/economie-reelle"], ["Togo", "/togo"], ["Afrique", "/afrique"], ["Glossaire", "/glossaire"], ["Fiches de révision", "/fiches"], ["Ressources", "/ressources"], ["Compétences recherchées", "/marche-competences"], ["Établissements", "/etablissements"], ["Professionnels et simulations", "/professionnels"]] as const;
 
 export function Brand({ compact = false }: { compact?: boolean }) {
   return (
@@ -57,6 +57,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
         {menuOpen && <nav className="border-t border-[#14333A]/10 bg-[#F8F5ED] px-4 py-4 xl:hidden" aria-label="Navigation mobile">
           <div className="mx-auto flex max-w-2xl flex-col gap-1">
             {nav.map(([label, href]) => <Link key={href} href={href} className={`rounded-xl px-4 py-3 text-base font-medium ${isActive(href) ? "bg-[#E1EEE7] text-[#0E6356]" : "hover:bg-[#F0ECE1]"}`}>{label}</Link>)}
+            <p className="mt-3 px-4 text-[.62rem] font-mono uppercase tracking-[.12em] text-[#71827A]">Approfondir</p>{secondaryNav.map(([label, href]) => <Link key={href} href={href} className={`rounded-xl px-4 py-2 text-sm font-medium ${isActive(href) ? "bg-[#E1EEE7] text-[#0E6356]" : "hover:bg-[#F0ECE1]"}`}>{label}</Link>)}
             <div className="mt-2 grid gap-2 sm:grid-cols-2"><Link href="/mon-ecocompass" className="flex items-center gap-2 rounded-xl border border-[#14333A]/12 px-4 py-3 font-medium"><UserRound size={17} /> Mon EcoCompass</Link><Link href="/projets" className="flex items-center gap-2 rounded-xl border border-[#14333A]/12 px-4 py-3 font-medium"><FlaskConical size={17} /> Mes projets</Link><Link href="/recherche" className="flex items-center gap-2 rounded-xl border border-[#14333A]/12 px-4 py-3 font-medium"><Search size={17} /> Rechercher une notion</Link><Link href="/favoris" className="flex items-center gap-2 rounded-xl border border-[#14333A]/12 px-4 py-3 font-medium"><BookmarkCheck size={17} /> Mes favoris</Link></div>
           </div>
         </nav>}
@@ -68,10 +69,10 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
             <div className="flex items-center gap-3"><img src={logoUrl} alt="" className="h-11 w-11" /><span className="font-display text-2xl tracking-[-.06em]">EcoCompass</span></div>
             <p className="mt-5 max-w-sm text-sm leading-6 text-[#C8D5CF]">Comprendre l’économie, découvrir ses opportunités et construire progressivement son avenir, avec une attention particulière au Togo et à l’Afrique.</p>
           </div>
-          <div><p className="eyebrow text-[#95CDB6]">Explorer</p><div className="mt-4 grid gap-2 text-sm text-[#DCE6DF]">{nav.slice(0, 4).map(([label, href]) => <Link key={href} href={href} className="footer-link">{label}</Link>)}<Link href="/fiches" className="footer-link">Fiches de révision</Link><Link href="/ressources" className="footer-link">Ressources</Link></div></div>
-          <div><p className="eyebrow text-[#95CDB6]">Pratiquer</p><div className="mt-4 grid gap-2 text-sm text-[#DCE6DF]"><Link href="/ecolab" className="footer-link">EcoLab</Link><Link href="/cas" className="footer-link">Études de cas</Link><Link href="/projets" className="footer-link">Mes projets</Link><Link href="/competences" className="footer-link">Mes compétences</Link><Link href="/mon-ecocompass" className="footer-link">Mon EcoCompass</Link></div></div>
+          <div><p className="eyebrow text-[#95CDB6]">Explorer</p><div className="mt-4 grid gap-2 text-sm text-[#DCE6DF]"><Link href="/metiers" className="footer-link">Métiers</Link><Link href="/formations" className="footer-link">Formations</Link><Link href="/etablissements" className="footer-link">Établissements</Link><Link href="/opportunites" className="footer-link">Opportunités</Link><Link href="/ressources" className="footer-link">Bibliothèque et ressources</Link></div></div>
+          <div><p className="eyebrow text-[#95CDB6]">Pratiquer</p><div className="mt-4 grid gap-2 text-sm text-[#DCE6DF]"><Link href="/ecolab" className="footer-link">EcoLab</Link><Link href="/cas" className="footer-link">Études de cas</Link><Link href="/professionnels" className="footer-link">Professionnels et simulations</Link><Link href="/projets" className="footer-link">Mes projets</Link><Link href="/competences" className="footer-link">Mes compétences</Link><Link href="/marche-competences" className="footer-link">Compétences recherchées</Link><Link href="/mon-ecocompass" className="footer-link">Mon EcoCompass</Link></div></div>
         </div>
-        <div className="container flex flex-col gap-3 border-t border-white/10 py-5 text-xs text-[#B8C5BD] sm:flex-row sm:items-center sm:justify-between"><span>EcoCompass — Prototype pédagogique V1</span><span className="flex items-center gap-2"><Compass size={14} /> Les données économiques sont à vérifier avant publication.</span></div>
+        <div className="container flex flex-col gap-3 border-t border-white/10 py-5 text-xs text-[#B8C5BD] sm:flex-row sm:items-center sm:justify-between"><span>EcoCompass — Prototype pédagogique V4</span><span className="flex items-center gap-2"><Compass size={14} /> Les informations économiques et professionnelles sont à vérifier avant toute décision.</span></div>
       </footer>
     </div>
   );

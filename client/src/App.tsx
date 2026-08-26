@@ -29,6 +29,11 @@ const EcoLab = lazy(() => import("@/pages/EcoLab"));
 const Projects = lazy(() => import("@/pages/Projects"));
 const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
 const Skills = lazy(() => import("@/pages/Skills"));
+const Formations = lazy(() => import("@/pages/Formations"));
+const SkillsMarket = lazy(() => import("@/pages/SkillsMarket"));
+const Institutions = lazy(() => import("@/pages/Institutions"));
+const Opportunities = lazy(() => import("@/pages/Opportunities"));
+const ProfessionalScenarios = lazy(() => import("@/pages/ProfessionalScenarios"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function Router() {
@@ -54,6 +59,11 @@ function Router() {
     <Route path="/projets" component={Projects} />
     <Route path="/cas" component={CaseStudies} />
     <Route path="/competences" component={Skills} />
+    <Route path="/formations" component={Formations} />
+    <Route path="/marche-competences" component={SkillsMarket} />
+    <Route path="/etablissements" component={Institutions} />
+    <Route path="/opportunites" component={Opportunities} />
+    <Route path="/professionnels" component={ProfessionalScenarios} />
     <Route component={NotFound} />
   </Switch>;
 }

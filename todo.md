@@ -39,3 +39,13 @@
 
 - [x] Identifier la cause de l’erreur qui empêche le site de se charger.
 - [x] Appliquer le correctif, reconstruire et vérifier l’ouverture publique.
+
+## Aperçu de gestion
+
+- [x] Diagnostiquer le blocage persistant de l’aperçu dans l’interface de gestion.
+- [x] Réinitialiser le service concerné et vérifier l’affichage de l’aperçu.
+
+## Erreur du panneau d’aperçu
+
+- [ ] Extraire le message détaillé associé au compteur d’erreur affiché dans l’aperçu.
+- [ ] Corriger la cause du rendu intégré puis contrôler le panneau dans l’interface.

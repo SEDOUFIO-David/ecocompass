@@ -31,7 +31,13 @@ function loadState(): LearningState {
 
 export function LearningProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<LearningState>(loadState);
-  useEffect(() => { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }, [state]);
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch {
+      // L’aperçu intégré reste fonctionnel lorsque le navigateur interdit le stockage local.
+    }
+  }, [state]);
 
   const value = useMemo<LearningContextValue>(() => ({
     ...state,

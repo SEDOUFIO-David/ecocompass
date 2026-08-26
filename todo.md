@@ -105,6 +105,12 @@
 - [x] Ajouter un mode sombre mémorisé et des interactions de survol accessibles.
 - [x] Vérifier les deux thèmes, le responsive et synchroniser la mise à jour.
 
+## Lisibilité des thèmes
+
+- [x] Auditer les contrastes des surfaces, textes, formulaires et graphiques en clair et en sombre.
+- [x] Corriger les jetons de couleur et les états interactifs insuffisamment lisibles.
+- [x] Vérifier les écrans prioritaires dans les deux thèmes et publier le correctif.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

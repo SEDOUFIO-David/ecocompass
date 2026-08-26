@@ -3,21 +3,26 @@
  */
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
-type FavoriteType = "course" | "career" | "glossary" | "case";
+type FavoriteType = "course" | "career" | "glossary" | "case" | "project";
 export type FavoriteItem = { id: string; type: FavoriteType; title: string; href: string };
 type QuizScore = { score: number; total: number; completedAt: string };
-type LearningState = { started: string[]; completed: string[]; quizScores: Record<string, QuizScore>; lastCourse?: string; favorites: FavoriteItem[] };
+export type PersonalProfile = { name: string; level: string; interests: string[]; goal: string };
+export type PersonalProject = { id: string; templateSlug: string; title: string; completedAt?: string; reflection?: string };
+type LearningState = { started: string[]; completed: string[]; quizScores: Record<string, QuizScore>; lastCourse?: string; favorites: FavoriteItem[]; profile: PersonalProfile; projects: PersonalProject[]; activePath?: string };
 type LearningContextValue = LearningState & {
   startCourse: (slug: string) => void;
   completeCourse: (slug: string) => void;
   saveQuizScore: (slug: string, score: number, total: number) => void;
   toggleFavorite: (item: FavoriteItem) => void;
   isFavorite: (id: string) => boolean;
+  updateProfile: (profile: Partial<PersonalProfile>) => void;
+  saveProject: (project: Omit<PersonalProject, "id"> & { id?: string }) => void;
+  setActivePath: (slug?: string) => void;
   resetProgress: () => void;
 };
 
 const STORAGE_KEY = "ecocompass-learning-v2";
-const fallback: LearningState = { started: [], completed: [], quizScores: {}, favorites: [] };
+const fallback: LearningState = { started: [], completed: [], quizScores: {}, favorites: [], profile: { name: "", level: "Je découvre l’économie", interests: [], goal: "" }, projects: [] };
 const LearningContext = createContext<LearningContextValue | null>(null);
 
 function loadState(): LearningState {
@@ -25,7 +30,7 @@ function loadState(): LearningState {
   try {
     const parsed = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || "null");
     if (!parsed || !Array.isArray(parsed.started) || !Array.isArray(parsed.completed) || !Array.isArray(parsed.favorites)) return fallback;
-    return { ...fallback, ...parsed };
+    return { ...fallback, ...parsed, profile: { ...fallback.profile, ...(parsed.profile || {}) }, projects: Array.isArray(parsed.projects) ? parsed.projects : [] };
   } catch { return fallback; }
 }
 
@@ -46,6 +51,9 @@ export function LearningProvider({ children }: { children: ReactNode }) {
     saveQuizScore: (slug, score, total) => setState((current) => ({ ...current, quizScores: { ...current.quizScores, [slug]: { score, total, completedAt: new Date().toISOString() } } })),
     toggleFavorite: (item) => setState((current) => ({ ...current, favorites: current.favorites.some((favorite) => favorite.id === item.id) ? current.favorites.filter((favorite) => favorite.id !== item.id) : [...current.favorites, item] })),
     isFavorite: (id) => state.favorites.some((favorite) => favorite.id === id),
+    updateProfile: (profile) => setState((current) => ({ ...current, profile: { ...current.profile, ...profile } })),
+    saveProject: (project) => setState((current) => ({ ...current, projects: current.projects.some((item) => item.id === project.id) ? current.projects.map((item) => item.id === project.id ? { ...item, ...project } : item) : [...current.projects, { ...project, id: project.id || `${project.templateSlug}-${Date.now()}` }] })),
+    setActivePath: (slug) => setState((current) => ({ ...current, activePath: slug })),
     resetProgress: () => setState(fallback),
   }), [state]);
 

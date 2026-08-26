@@ -24,6 +24,11 @@ const Favorites = lazy(() => import("@/pages/Favorites"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const Africa = lazy(() => import("@/pages/Africa"));
 const RevisionSheets = lazy(() => import("@/pages/RevisionSheets"));
+const MyCompass = lazy(() => import("@/pages/MyCompass"));
+const EcoLab = lazy(() => import("@/pages/EcoLab"));
+const Projects = lazy(() => import("@/pages/Projects"));
+const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
+const Skills = lazy(() => import("@/pages/Skills"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function Router() {
@@ -44,6 +49,11 @@ function Router() {
     <Route path="/ressources" component={Resources} />
     <Route path="/afrique" component={Africa} />
     <Route path="/fiches" component={RevisionSheets} />
+    <Route path="/mon-ecocompass" component={MyCompass} />
+    <Route path="/ecolab" component={EcoLab} />
+    <Route path="/projets" component={Projects} />
+    <Route path="/cas" component={CaseStudies} />
+    <Route path="/competences" component={Skills} />
     <Route component={NotFound} />
   </Switch>;
 }

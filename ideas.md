@@ -87,3 +87,6 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - Les pages d’apprentissage montrent une progression éditoriale par chapitres et jalons plutôt qu’une grille uniforme de cartes.
 - Les lignes de trajectoire et la rose des directions relient les étapes, les choix et les recommandations visibles ; elles ne servent jamais de simple décoration.
 - L’ocre clair est réservé aux exemples concrets, avertissements méthodologiques et repères de terrain associés au Togo et à l’Afrique.
+- Chaque espace V3 de pratique expose une trajectoire fonctionnelle reliant des contenus réels — cours, données, hypothèses, projets, compétences ou métiers — avec jalons et liens plutôt qu’avec des ornements isolés.
+- Les héros des espaces V3 se distinguent par un artefact lié à leur usage : statut et source pour EcoLab, étapes d’enquête pour les projets et cas, chaîne cours → projet → métier pour les compétences.
+- Les données de démonstration sont affichées comme des cartouches éditoriaux : statut, unité, période, source fictive et limite restent visibles près des graphiques.

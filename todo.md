@@ -49,3 +49,13 @@
 
 - [ ] Extraire le message détaillé associé au compteur d’erreur affiché dans l’aperçu.
 - [ ] Corriger la cause du rendu intégré puis contrôler le panneau dans l’interface.
+
+## EcoCompass V3
+
+- [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.
+- [x] Ajouter un profil local et le tableau de bord personnel « Mon EcoCompass ».
+- [x] Créer des parcours personnalisés et des recommandations locales prudentes.
+- [x] Construire EcoLab avec explorateur de données de démonstration et interprétation guidée.
+- [x] Étendre les simulations, études de cas en mode apprenant et projets pratiques.
+- [x] Ajouter portfolio local, système de compétences, recherche et navigation V3.
+- [x] Vérifier la V3, mettre à jour le rapport final et sauvegarder la version livrable.

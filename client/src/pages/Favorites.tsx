@@ -2,14 +2,14 @@
  * Design: Atlas académique vivant — les favoris sont une bibliothèque personnelle locale, sans compte ni métrique sociale.
  */
 import { Link } from "wouter";
-import { ArrowRight, BookmarkCheck, BookOpenText, BriefcaseBusiness, Compass, Shapes } from "lucide-react";
+import { ArrowRight, BookmarkCheck, BookOpenText, BriefcaseBusiness, Compass, FolderKanban, Shapes } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import PageHero from "@/components/PageHero";
 import FavoriteButton from "@/components/FavoriteButton";
 import { useLearning } from "@/contexts/LearningContext";
 
-const icons = { course: BookOpenText, career: BriefcaseBusiness, glossary: Shapes, case: Compass };
-const labels = { course: "Cours", career: "Métier", glossary: "Notion", case: "Étude de cas" };
+const icons = { course: BookOpenText, career: BriefcaseBusiness, glossary: Shapes, case: Compass, project: FolderKanban };
+const labels = { course: "Cours", career: "Métier", glossary: "Notion", case: "Étude de cas", project: "Projet" };
 
 export default function Favorites() {
   const { favorites } = useLearning();

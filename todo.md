@@ -168,6 +168,11 @@
 - [x] Transformer concrètement l’accueil, le répertoire Métiers et les parcours de navigation associés.
 - [x] Vérifier la cohérence claire/sombre, l’accessibilité et les vues mobiles avant publication.
 
+## Livraison de la refonte guidée par le référentiel
+
+- [x] Vérifier l’état final de la refonte de l’accueil et du répertoire Métiers.
+- [x] Créer le point de contrôle publié et présenter les modifications concrètes appliquées.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

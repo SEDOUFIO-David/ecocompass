@@ -1574,6 +1574,108 @@
   .filter-reset { width: 100%; }
 }
 
+/* Compétences de cours : chaque notion débouche sur une action observable, sans transformer le parcours en certification. */
+.course-competency-preview { border-top: 1px solid #dce6df; display: grid; gap: .16rem; margin-top: 1rem; padding-top: .7rem; }
+.course-competency-preview span { color: #8a6232; font-family: "IBM Plex Mono", monospace; font-size: .53rem; letter-spacing: .07em; text-transform: uppercase; }
+.course-competency-preview b { color: #245348; font-size: .7rem; line-height: 1.35; }
+.course-competency-section { border-top: 1px solid #d6e2d9; padding-top: 2rem; }
+.course-competency-section > h2 { color: #153e40; font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -.055em; line-height: 1; margin: .4rem 0 .75rem; }
+.course-competency-section > p:not(.eyebrow) { color: #5c716b; font-size: .84rem; line-height: 1.65; max-width: 48rem; }
+.course-competency-grid { display: grid; gap: .65rem; margin-top: 1.25rem; }
+.course-competency-grid article { background: #fffdf8; border-left: 3px solid #0e6356; display: grid; gap: .4rem; padding: .85rem .95rem; }
+.course-competency-grid article > span { color: #0e6356; font-family: "IBM Plex Mono", monospace; font-size: .56rem; letter-spacing: .06em; text-transform: uppercase; }
+.course-competency-grid article > b { color: #1e4740; font-size: .82rem; line-height: 1.45; }
+.course-competency-grid article > p { color: #62766e; font-size: .73rem; line-height: 1.5; margin: 0; }
+.course-competency-grid strong { color: #815c2c; font-weight: 700; }
+.dark .course-competency-preview { border-color: #477168; }
+.dark .course-competency-preview b { color: #d1ecda; }
+.dark .course-competency-section { border-color: #477168; }
+.dark .course-competency-section > h2 { color: #edf8f0; }
+.dark .course-competency-section > p:not(.eyebrow) { color: #c7ddd0; }
+.dark .course-competency-grid article { background: #173b3d; border-color: #99d3ad; }
+.dark .course-competency-grid article > span { color: #aee0bb; }
+.dark .course-competency-grid article > b { color: #edf9f1; }
+.dark .course-competency-grid article > p { color: #c6ded0; }
+.dark .course-competency-grid strong { color: #edc889; }
+
+/* Formations sourcées : la source est exposée comme une étape de vérification, jamais comme promesse d’admission. */
+.training-source-route { align-items: center; background: #143b42; color: #eff8f1; display: grid; gap: .75rem; grid-template-columns: auto 1fr auto; margin: 1.3rem 0; padding: .8rem 1rem; }
+.training-source-route > svg { color: #a9d8ba; }
+.training-source-route > div { display: grid; gap: .12rem; }
+.training-source-route span, .training-card-sources > p, .training-sources-board > div:first-child > p { color: #b7d7c7; font-family: "IBM Plex Mono", monospace; font-size: .55rem; letter-spacing: .07em; text-transform: uppercase; }
+.training-source-route b { font-size: .76rem; }
+.training-source-route > a { align-items: center; color: #e9f5ed; display: inline-flex; font-size: .72rem; font-weight: 700; gap: .35rem; white-space: nowrap; }
+.training-card-sources { border-top: 1px solid #dce5dc; margin-top: .85rem; padding-top: .7rem; }
+.training-card-sources > p { color: #7f633c; margin: 0 0 .35rem; }
+.training-card-sources a { align-items: center; color: #24564b; display: grid; font-size: .67rem; gap: .15rem .4rem; grid-template-columns: auto 1fr auto; padding: .2rem 0; }
+.training-card-sources a span { color: #0e6356; font-family: "IBM Plex Mono", monospace; font-size: .52rem; letter-spacing: .04em; }
+.training-card-sources a svg { color: #0e6356; }
+.training-sources-board { border-top: 1px solid #d5e1d8; display: grid; gap: 1.5rem; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); margin-top: 3rem; padding-top: 2rem; scroll-margin-top: 6rem; }
+.training-sources-board h2 { color: #153d3e; font-size: clamp(2rem, 3.3vw, 3.1rem); letter-spacing: -.06em; line-height: .98; margin: .4rem 0 .7rem; }
+.training-sources-board > div:first-child > p:last-child { color: #5e746c; font-size: .78rem; line-height: 1.6; max-width: 34rem; }
+.training-sources-board > div:last-child { display: grid; gap: .55rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.training-sources-board > div:last-child > a { background: #fffdf8; border-left: 2px solid #0e6356; color: #1e4c43; display: grid; gap: .2rem; min-height: 12rem; padding: .8rem; position: relative; }
+.training-sources-board > div:last-child > a:hover { background: #edf5ee; }
+.training-sources-board > div:last-child span { color: #8c6330; font-family: "IBM Plex Mono", monospace; font-size: .52rem; letter-spacing: .06em; text-transform: uppercase; }
+.training-sources-board h3 { font-family: "Source Serif 4", Georgia, serif; font-size: 1.12rem; letter-spacing: -.035em; line-height: 1.05; margin: .3rem 1.3rem .05rem 0; }
+.training-sources-board a > p, .training-sources-board a > small, .training-sources-board a > i { color: #60736d; font-size: .63rem; line-height: 1.4; margin: 0; }
+.training-sources-board a > small { color: #7d897f; font-family: "IBM Plex Mono", monospace; font-size: .5rem; letter-spacing: .03em; }
+.training-sources-board a > i { margin-top: .15rem; }
+.training-sources-board a > svg { color: #0e6356; position: absolute; right: .75rem; top: .75rem; }
+.dark .training-source-route { background: #11363a; }
+.dark .training-card-sources { border-color: #4d766b; }
+.dark .training-card-sources a { color: #d3ebdb; }
+.dark .training-card-sources a span, .dark .training-card-sources a svg { color: #a8ddba; }
+.dark .training-sources-board { border-color: #4e746b; }
+.dark .training-sources-board h2 { color: #eef9f1; }
+.dark .training-sources-board > div:first-child > p:last-child { color: #c4dbcf; }
+.dark .training-sources-board > div:last-child > a { background: #173c3d; border-color: #a5d2b3; color: #eff9f1; }
+.dark .training-sources-board > div:last-child > a:hover { background: #1c4745; }
+.dark .training-sources-board a > p, .dark .training-sources-board a > small, .dark .training-sources-board a > i { color: #c2dbcd; }
+.dark .training-sources-board a > svg { color: #a8ddba; }
+@media (max-width: 760px) { .training-source-route { align-items: flex-start; grid-template-columns: auto 1fr; } .training-source-route > a { grid-column: 2; } .training-sources-board { grid-template-columns: 1fr; } .training-sources-board > div:last-child { grid-template-columns: 1fr; } .training-sources-board > div:last-child > a { min-height: 0; } }
+
+/* Recherche sémantique locale : l’élargissement est annoncé et reste explicable par l’apprenant. */
+.search-synonym-note { align-items: flex-start; background: #edf4ed; border-left: 3px solid #0e6356; color: #255348; display: flex; font-size: .75rem; gap: .6rem; line-height: 1.55; margin: -1rem 0 1.5rem; padding: .8rem .9rem; }
+.search-synonym-note svg { color: #0e6356; flex: 0 0 auto; margin-top: .08rem; }
+.search-synonym-note div { display: grid; gap: .12rem; }
+.search-synonym-note p { color: #0e6356; font-family: "IBM Plex Mono", monospace; font-size: .55rem; letter-spacing: .06em; margin: 0; text-transform: uppercase; }
+.search-synonym-note span { color: #536f65; }
+.dark .search-synonym-note { background: #1a4442; border-color: #a9dbb8; }
+.dark .search-synonym-note svg, .dark .search-synonym-note p { color: #b4e5c1; }
+.dark .search-synonym-note span { color: #d1e6d8; }
+
+/* Passe de cohérence Atlas : les héros, repères de formation et compétences reprennent la rose EcoCompass comme outil de décision. */
+.page-hero-training { background-color: #f2f5ed !important; background-image: linear-gradient(90deg, #f8f5ed 0 60%, transparent 60%), linear-gradient(rgba(41, 91, 82, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(41, 91, 82, .08) 1px, transparent 1px) !important; background-size: auto, 2.4rem 2.4rem, 2.4rem 2.4rem !important; }
+.training-hero-atlas { display: grid; gap: .75rem; }
+.training-hero-atlas .atlas-panel { background: rgba(255,255,255,.5); border: 1px solid #99bdad; box-shadow: 8px 8px 0 rgba(69, 115, 96, .12); margin: 0; min-height: 0; padding: .75rem; }
+.training-hero-atlas .atlas-panel-art { min-height: 7rem; }
+.training-hero-atlas .atlas-panel figcaption { display: none; }
+.training-hero-atlas .training-hero-note { border-radius: 0; min-height: 0; }
+.training-source-route > .brand-mark { height: 1.55rem; width: 1.55rem; }
+.training-grid { position: relative; }
+.training-grid::before { border-left: 1px dashed #8bb69e; content: ""; height: calc(100% - 2.5rem); left: 1rem; pointer-events: none; position: absolute; top: 1.25rem; }
+.training-grid > article { position: relative; }
+.training-stop-marker { align-items: center; color: #0e6356; display: flex; font-family: "IBM Plex Mono", monospace; font-size: .5rem; gap: .35rem; letter-spacing: .05em; margin-bottom: .5rem; text-transform: uppercase; }
+.training-stop-marker .brand-mark { background: #f8f5ed; height: 1.1rem; width: 1.1rem; z-index: 1; }
+.training-stop-marker span { color: #98703d; }
+.training-stop-marker b { font-size: inherit; font-weight: 700; }
+.training-entry { background: #eff5ef !important; border-color: #7fac90 !important; grid-column: span 2; }
+.training-entry .training-stop-marker { border-bottom: 1px solid #c7dbcb; padding-bottom: .5rem; }
+.training-entry h3 { font-size: 1.75rem; max-width: 25rem; }
+.course-competency-heading { align-items: center; display: flex; gap: .65rem; }
+.course-competency-heading .brand-mark { flex: 0 0 auto; height: 2rem; width: 2rem; }
+.course-competency-heading .eyebrow { margin: 0; }
+.course-competency-heading h2 { margin-top: .25rem; }
+.search-index-ledger .brand-mark { height: 1rem; width: 1rem; }
+.dark .page-hero-training { background-color: #173b3d !important; background-image: linear-gradient(90deg, #16383a 0 60%, transparent 60%), linear-gradient(rgba(210, 239, 220, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(210, 239, 220, .08) 1px, transparent 1px) !important; }
+.dark .training-hero-atlas .atlas-panel { background: rgba(16, 52, 55, .82); border-color: #638d80; box-shadow: 8px 8px 0 rgba(4, 29, 29, .26); }
+.dark .training-grid::before { border-color: #659a7c; }
+.dark .training-stop-marker .brand-mark { background: #173c3d; }
+.dark .training-entry { background: #1a4643 !important; border-color: #669e7d !important; }
+.dark .training-entry .training-stop-marker { border-color: #4e766b; }
+@media (max-width: 760px) { .training-hero-atlas .atlas-panel-art { min-height: 5.5rem; } .training-grid::before { left: .75rem; } .training-entry { grid-column: auto; } }
+
 /* Refonte structurante : l’accueil et le répertoire guident par routes, étapes et comparaisons plutôt que par une grille de cartes homogènes. */
 .orientation-board {
   background: linear-gradient(90deg, #fbf8ef 0 55%, #eef4ee 55% 100%);

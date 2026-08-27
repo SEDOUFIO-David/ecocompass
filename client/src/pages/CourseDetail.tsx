@@ -9,6 +9,7 @@ import { courses } from "@/data/ecocompass";
 import { resourceLinks } from "@/data/v2";
 import FavoriteButton from "@/components/FavoriteButton";
 import CourseQuiz from "@/components/CourseQuiz";
+import BrandMark from "@/components/BrandMark";
 import { useLearning } from "@/contexts/LearningContext";
 
 export default function CourseDetail() {
@@ -25,6 +26,7 @@ export default function CourseDetail() {
     <section className="course-detail-hero"><div className="container"><Link href="/apprendre" className="back-link"><ArrowLeft size={17} /> Retour à la bibliothèque</Link><div className="mt-9 grid gap-8 lg:grid-cols-[1fr_270px]"><div><p className="eyebrow">Cours {String(course.id).padStart(2, "0")} · {course.domain}</p><h1>{course.title}</h1><p>{course.summary}</p><div className="course-detail-actions"><FavoriteButton item={{ id: `course:${course.slug}`, type: "course", title: course.title, href: `/apprendre/${course.slug}` }} />{isCompleted ? <span className="course-completed"><CheckCircle2 size={16} /> Cours terminé</span> : <button type="button" onClick={() => completeCourse(course.slug)} className="course-complete">Marquer comme terminé <CheckCircle2 size={16} /></button>}</div></div><div className="course-detail-meta"><span>{course.level}</span><b>{course.duration}</b><small>Une séquence à votre rythme</small></div></div></div></section>
     <section className="bg-[#F8F5ED] py-12 lg:py-16"><div className="container grid gap-10 lg:grid-cols-[minmax(0,1fr)_275px]"><article className="course-reading">
       <section><p className="eyebrow">Objectifs</p><h2>À la fin de ce cours, vous pourrez…</h2><div className="mt-5 grid gap-3">{course.objectives.map((objective) => <div className="objective-line" key={objective}><CheckCircle2 size={18} /> {objective}</div>)}</div></section>
+      <section className="course-competency-section"><div className="course-competency-heading"><BrandMark /><div><p className="eyebrow">Compétences observables</p><h2>Des repères à exercer, pas une certification.</h2></div></div><p>Chaque compétence indique une action vérifiable et une trace simple à produire. Elles servent à guider votre progression dans EcoCompass ; elles ne remplacent ni évaluation académique ni validation professionnelle.</p><div className="course-competency-grid">{course.competencies.map((competency, index) => <article key={competency.id}><span>0{index + 1} · {competency.label}</span><b>{competency.criterion}</b><p><strong>Trace attendue :</strong> {competency.evidence}</p></article>)}</div></section>
       <section><p className="eyebrow">L’idée essentielle</p><h2>Partir d’une question simple.</h2><p>{course.explanation}</p></section>
       <section className="example-section"><div><Lightbulb className="text-[#0E6356]" size={22} /><p className="eyebrow mt-4">Exemple</p><h2>Observer avant de généraliser.</h2><p>{course.example}</p></div><span className="example-index">Ex.</span></section>
       <section><p className="eyebrow">Notions à retenir</p><div className="mt-5 flex flex-wrap gap-2">{course.notions.map((notion) => <span className="notion-chip" key={notion}>{notion}</span>)}</div></section>

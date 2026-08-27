@@ -182,6 +182,15 @@
 - [x] Améliorer les contextes Togo/Afrique, les graphiques pédagogiques, la recherche et les états importants.
 - [x] Vérifier les routes, thèmes, interactions, responsive, données documentées et build de production avant publication.
 
+## EcoCompass — compétences, formations sourcées et recherche sémantique
+
+- [x] Auditer les modèles de cours, formations et recherche avant d’étendre leurs données et leurs interactions.
+- [x] Vérifier des sources institutionnelles pour les formations et documenter leur rôle éditorial.
+- [x] Relier chaque cours à des compétences observables et à un critère de progression pédagogique.
+- [x] Rendre les sources de formation visibles, accessibles et distinctes d’une recommandation automatique.
+- [x] Ajouter des synonymes économiques à la recherche avec une explication transparente des correspondances.
+- [x] Vérifier les liens, filtres, résultats, thèmes, mobile et build avant publication.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

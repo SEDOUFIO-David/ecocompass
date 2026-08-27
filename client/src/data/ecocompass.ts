@@ -1,3 +1,5 @@
+import { getCourseCompetencies, type CourseCompetency } from "./courseCompetenciesV7";
+
 /**
  * Design: Atlas académique vivant — contenus courts, contextuels et progressifs.
  * Les données économiques togolaises sont volontairement des démonstrations identifiées comme telles.
@@ -17,6 +19,7 @@ export type Course = {
   application: string;
   exercise: string;
   answer: string;
+  competencies: CourseCompetency[];
 };
 
 const courseSeeds = [
@@ -52,6 +55,7 @@ export const courses: Course[] = courseSeeds.map((seed, index) => ({
   application: seed[6],
   exercise: `En une ou deux phrases : ${seed[6]}`,
   answer: "Une bonne réponse explique la situation, précise la ressource ou l’information utilisée et justifie l’idée sans chercher une réponse unique.",
+  competencies: getCourseCompetencies(seed[0], seed[2]),
 }));
 
 export type Career = {

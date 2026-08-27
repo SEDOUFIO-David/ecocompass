@@ -116,3 +116,6 @@ Le signe combine une **aiguille de boussole ouverte** et une feuille géométriq
 - La refonte s’appuie sur une combinaison de minimalisme éditorial structuré, de composition géométrique et d’accessibilité : une **route d’orientation fonctionnelle** relie le point actuel, les options comparables et la prochaine trace d’apprentissage.
 - L’accueil devient une table d’orientation asymétrique ; il fait apparaître le point de départ, une carte de progression et les choix de parcours dans un même système plutôt que dans une succession de cartes.
 - Le répertoire Métiers devient une cartographie de décisions : chaque famille montre une piste d’entrée dominante, des options comparables et les suites compétences → formations → projets.
+- Les pages de recherche et de questionnaire sont des **tables d’orientation Atlas** : elles font apparaître un point actuel, des options comparables et une trace suivante, jamais un formulaire isolé.
+- Aucun décor abstrait ne reste dans les héros : les motifs prennent la forme d’une carte, d’une route, d’une boussole, de repères de grille ou d’un dossier de lecture.
+- Les répertoires de métiers restent des cartographies : une piste d’entrée, des alternatives comparables, puis une suite explicite compétences → formations → projets.

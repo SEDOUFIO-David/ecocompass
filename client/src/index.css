@@ -25,7 +25,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root { --background: #FAFAF7; --foreground: #183235; --card: #FFFFFF; --card-foreground: #183235; --primary: #155E59; --primary-foreground: #FFFFFF; --muted: #F0F2ED; --muted-foreground: #596B68; --border: #D8DED8; --ring: #155E59; --radius: .35rem; }
+:root { --background: #FAFAF7; --foreground: #183235; --card: #FFFFFF; --card-foreground: #183235; --primary: #155E59; --primary-foreground: #FFFFFF; --muted: #F0F2ED; --muted-foreground: #596B68; --border: #D8DED8; --ring: #155E59; --radius: .35rem; --ec-paper: #F8F5ED; --ec-surface: #FFFFFF; --ec-ink: #14333A; --ec-atlas: #0E6356; --ec-terrain: #B67835; --ec-border: #D7E3DB; --ec-soft-green: #E8F0EA; --ec-soft-ochre: #FFF3D9; --ec-shadow: 0 12px 30px rgba(20, 51, 58, .08); --ec-space-1: .5rem; --ec-space-2: 1rem; --ec-space-3: 1.5rem; --ec-space-4: 2.5rem; --ec-space-5: 4rem; }
 * { border-color: var(--border); }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: #FAFAF7; color: #183235; font-family: "Source Sans 3", Arial, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }

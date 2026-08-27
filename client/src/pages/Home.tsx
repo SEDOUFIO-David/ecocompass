@@ -10,9 +10,11 @@ import { useLearning } from "@/contexts/LearningContext";
 import { courses } from "@/data/ecocompass";
 
 const orientationRoutes = [
-  { icon: Compass, number: "01", title: "Prendre les bases", text: "Une première question, des repères et des exemples.", href: "/decouvrir", action: "Ouvrir les bases" },
-  { icon: BookOpenText, number: "02", title: "Suivre un cours", text: "Une notion, un exercice et une trace de lecture.", href: "/apprendre", action: "Voir les cours" },
-  { icon: BriefcaseBusiness, number: "03", title: "Comparer des pistes", text: "Des rôles, des compétences et des formations à vérifier.", href: "/metiers", action: "Explorer les métiers" },
+  { icon: Compass, number: "01", title: "Je découvre l’économie", text: "Une première question, des repères et des exemples.", href: "/decouvrir", action: "Commencer ici" },
+  { icon: BookOpenText, number: "02", title: "Je veux apprendre", text: "Une notion, un exercice et une trace de lecture.", href: "/apprendre", action: "Choisir un cours" },
+  { icon: BriefcaseBusiness, number: "03", title: "Je cherche un métier", text: "Des rôles, des compétences et des formations à vérifier.", href: "/metiers", action: "Explorer les métiers" },
+  { icon: GraduationCap, number: "04", title: "Je veux m’orienter", text: "Des préférences actuelles, puis des pistes à approfondir.", href: "/orientation", action: "Voir mes pistes" },
+  { icon: MapPinned, number: "05", title: "Je lis l’économie du Togo", text: "Des indicateurs publics, leur contexte et leurs limites.", href: "/togo", action: "Lire les données" },
 ];
 
 export default function Home() {
@@ -23,11 +25,11 @@ export default function Home() {
     <section className="orientation-board">
       <div className="container orientation-board-grid">
         <div className="orientation-board-intro">
-          <p className="eyebrow">Économie · Togo et Afrique</p>
+          <p className="eyebrow">Plateforme dédiée à l’économie</p>
           <p className="orientation-board-index">Point de départ <span>01</span></p>
-          <h1>Comprendre l’économie.<br /><em>Construire des repères utiles.</em></h1>
-          <p>EcoCompass relie notions, données et orientation dans un même chemin de lecture : une question, un repère, puis une suite possible.</p>
-          <div className="orientation-board-actions"><Link href="/decouvrir" className="cta-primary">Commencer par les bases <ArrowRight size={18} /></Link><Link href="/apprendre" className="cta-secondary">Choisir un cours</Link></div>
+          <h1>Comprendre l’économie.<br /><em>Découvrir où elle peut vous mener.</em></h1>
+          <p>Une plateforme pour comprendre les concepts économiques, découvrir les métiers, explorer les opportunités et construire progressivement votre parcours.</p>
+          <div className="orientation-board-actions"><Link href="/decouvrir" className="cta-primary">Commencer la découverte <ArrowRight size={18} /></Link><Link href="/metiers" className="cta-secondary">Explorer les métiers</Link></div>
           <div className="orientation-board-local"><span>Local</span><p><b>Votre progression reste ici.</b> Aucun compte factice ni score public.</p></div>
         </div>
         <div className="orientation-board-map">
@@ -36,7 +38,7 @@ export default function Home() {
           <div className="orientation-board-map-note"><Compass size={17} /><span><b>Une route avant une réponse.</b><br />Commencez par un sujet, puis poursuivez vers le cours, la donnée ou la piste associée.</span></div>
         </div>
         <nav className="orientation-route-list" aria-label="Parcours essentiels">
-          <div className="orientation-route-list-head"><div><BrandMark className="orientation-route-brand" /><p className="eyebrow">Choisir une route</p></div><span>3 parcours</span></div>
+          <div className="orientation-route-list-head"><div><BrandMark className="orientation-route-brand" /><p className="eyebrow">Que voulez-vous faire ?</p></div><span>5 intentions</span></div>
           {orientationRoutes.map(({ icon: Icon, number, title, text, href, action }) => <Link href={href} className="orientation-route" key={href}><span className="orientation-route-number">{number}</span><span className="orientation-route-icon"><Icon size={18} /></span><span className="orientation-route-copy"><b>{title}</b><small>{text}</small></span><span className="orientation-route-action">{action} <ArrowRight size={15} /></span></Link>)}
         </nav>
       </div>

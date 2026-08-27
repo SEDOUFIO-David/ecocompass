@@ -1460,6 +1460,120 @@
   font-family: "IBM Plex Mono", monospace !important;
 }
 
+/* Navigation V6 : toutes les fonctionnalités sont regroupées par intention, avec une lecture scannable sur desktop et mobile. */
+.site-menu-v6 { max-height: calc(100vh - 68px); overflow-y: auto; }
+.menu-v6-intro { align-items: center; border-bottom: 1px solid var(--ec-border); color: #587168; display: flex; font-size: .76rem; gap: .65rem; line-height: 1.5; padding-bottom: 1rem; }
+.menu-v6-intro svg { color: var(--ec-atlas); flex: 0 0 auto; height: 1.65rem; width: 1.65rem; }
+.menu-v6-intro p { margin: 0; max-width: 46rem; }
+.menu-v6-intro b { color: var(--ec-ink); }
+.menu-v6-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(5, minmax(0, 1fr)); padding-bottom: .5rem; padding-top: 1.3rem; }
+.menu-v6-group { border-left: 1px solid var(--ec-border); display: grid; gap: .7rem; min-width: 0; padding-left: .85rem; }
+.menu-v6-group > div:first-child { display: grid; gap: .22rem; }
+.menu-v6-group .menu-label { margin: 0; }
+.menu-v6-group > div:first-child > span { color: #6a7c74; font-size: .66rem; line-height: 1.35; }
+.menu-v6-group > div:last-child { display: grid; }
+.menu-v6-link { align-items: center; border-top: 1px solid rgba(215, 227, 219, .72); color: #284b46; display: flex; font-size: .74rem; gap: .35rem; justify-content: space-between; line-height: 1.3; padding: .45rem 0; transition: background-color 160ms ease, color 160ms ease, transform 160ms ease; }
+.menu-v6-link:hover, .menu-v6-link-active { color: var(--ec-atlas); transform: translateX(.18rem); }
+.menu-v6-link svg { flex: 0 0 auto; }
+.dark .menu-v6-intro { border-color: #4d716b; color: #c0d9cb; }
+.dark .menu-v6-intro b { color: #eff9f0; }
+.dark .menu-v6-grid .menu-v6-group { border-color: #4d716b; }
+.dark .menu-v6-group > div:first-child > span { color: #bed7ca; }
+.dark .menu-v6-link { border-color: rgba(97, 137, 127, .52); color: #e2f0e6; }
+.dark .menu-v6-link:hover, .dark .menu-v6-link-active { color: #bde9ca; }
+
+/* Parcours Découvrir V6 : progression visible, feedback explicite et continuité d’apprentissage. */
+.discover-progress-summary { color: #60756d; font-size: .69rem; line-height: 1.4; margin: .25rem 0 0; }
+.discover-margin-route { border-top: 1px solid #b9ccbe; color: #0e6356; font-family: "IBM Plex Mono", monospace; font-size: .58rem; letter-spacing: .06em; margin: 1.15rem 0 0; padding-top: .65rem; text-transform: uppercase; }
+.checkpoint-feedback-success { background: #e7f2e8; border-left: 2px solid #0e6356; color: #365b50; }
+.checkpoint-feedback-retry { background: #fff3dc; border-left: 2px solid #b67835; color: #705630; }
+.checkpoint-feedback-retry svg { color: #a86722; flex: 0 0 auto; }
+.checkpoint-feedback-retry button { color: #80521c; font-size: .72rem; font-weight: 700; text-decoration: underline; text-underline-offset: .18rem; }
+.dark .discover-progress-summary { color: #c5ded0; }
+.dark .discover-margin-route { border-color: #638a7a; color: #c4ebd3; }
+.dark .checkpoint-feedback-success { background: #1f4c47; border-color: #9dd3ad; color: #e0f1e4; }
+.dark .checkpoint-feedback-retry { background: #4b391f; border-color: #e2b36c; color: #f2dfbb; }
+.dark .checkpoint-feedback-retry button, .dark .checkpoint-feedback-retry svg { color: #f0c179; }
+
+/* Exploration professionnelle V6 : filtres réels et chaîne de préparation sans promesse de débouché. */
+.career-select-filters { display: grid; gap: .65rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.career-select-filters label { color: #4c6b62; display: grid; font-family: "IBM Plex Mono", monospace; font-size: .56rem; font-weight: 700; gap: .32rem; letter-spacing: .06em; text-transform: uppercase; }
+.career-select-filters select { background: #fbfdf9; border: 1px solid #b6cbbd; border-radius: .32rem; color: #173c38; font-family: "Source Sans 3", Arial, sans-serif; font-size: .78rem; font-weight: 600; min-height: 44px; padding: .55rem .65rem; text-transform: none; }
+.career-select-filters select:focus { border-color: #0e6356; box-shadow: 0 0 0 3px rgba(14, 99, 86, .13); outline: 0; }
+.career-v6-links { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.career-v6-links > div > span { color: #657870; display: block; font-size: .68rem; line-height: 1.45; margin-top: .45rem; }
+.dark .career-select-filters label { color: #c6dfd2; }
+.dark .career-select-filters select { background: #163b3b; border-color: #63867e; color: #f0f8f3; }
+.dark .career-select-filters select:focus { border-color: #bce4c9; box-shadow: 0 0 0 3px rgba(188, 228, 201, .18); }
+.dark .career-v6-links > div > span { color: #c4dacf; }
+
+@media (max-width: 760px) {
+  .career-select-filters { grid-template-columns: 1fr; }
+  .career-v6-links { grid-template-columns: 1fr; }
+}
+
+/* Orientation V6 : recommandations explicitement indicatives et actions reliées. */
+.orientation-question-help { color: #63776f; font-size: .75rem; line-height: 1.5; margin: .35rem 0 .85rem; max-width: 42rem; }
+.orientation-result-route { align-items: center; border-bottom: 1px solid #d2dfd4; border-top: 1px solid #d2dfd4; color: #0e6356; display: flex; flex-wrap: wrap; font-family: "IBM Plex Mono", monospace; font-size: .58rem; gap: .45rem; letter-spacing: .04em; margin-top: 1.4rem; padding: .68rem 0; text-transform: uppercase; }
+.orientation-result-route > span { align-items: center; display: inline-flex; gap: .28rem; }
+.orientation-result-route > svg { color: #779b8a; }
+.dark .orientation-question-help { color: #c6ded2; }
+.dark .orientation-result-route { border-color: #4f746b; color: #c8ebd5; }
+.dark .orientation-result-route > svg { color: #8dbba1; }
+
+@media (max-width: 640px) {
+  .orientation-result-route { align-items: flex-start; flex-direction: column; }
+  .orientation-result-route > svg { transform: rotate(90deg); }
+}
+
+/* Recherche V6 : suggestions de départ, filtres programmatiquement sélectionnés et retours d’état actionnables. */
+.search-suggestions { align-items: center; display: flex; flex-wrap: wrap; gap: .42rem; margin-top: 1rem; }
+.search-suggestions > span { color: #a9c9bb; font-family: "IBM Plex Mono", monospace; font-size: .58rem; letter-spacing: .06em; text-transform: uppercase; }
+.search-suggestions button { border: 1px solid rgba(190, 224, 204, .42); border-radius: 999px; color: #edf8f0; font-size: .68rem; min-height: 32px; padding: .35rem .65rem; }
+.search-suggestions button:hover { background: rgba(255, 255, 255, .1); }
+.search-result-summary { align-items: center; border-bottom: 1px solid #d7e3da; color: #5b746b; display: flex; font-family: "IBM Plex Mono", monospace; font-size: .64rem; gap: .8rem; justify-content: space-between; letter-spacing: .035em; margin-bottom: 2rem; padding-bottom: .75rem; }
+.search-result-summary button { color: #0e6356; font-family: "Source Sans 3", Arial, sans-serif; font-size: .74rem; font-weight: 700; letter-spacing: normal; text-decoration: underline; text-underline-offset: .18rem; }
+.search-start-state { align-items: flex-start; background: #f7faf6; border-left: 3px solid #0e6356; color: #5a7269; display: flex; gap: .85rem; padding: 1.25rem; }
+.search-start-state svg { color: #0e6356; flex: 0 0 auto; margin-top: .12rem; }
+.search-start-state h2 { color: #1c443e; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -.05em; line-height: 1; margin: .3rem 0 .55rem; }
+.search-start-state p:last-child { font-size: .8rem; line-height: 1.6; margin: 0; max-width: 45rem; }
+.dark .search-result-summary { border-color: #4b7169; color: #c5ddcf; }
+.dark .search-result-summary button { color: #c4ecd4; }
+.dark .search-start-state { background: #1a4341; border-color: #9bcaaa; color: #d1e3d8; }
+.dark .search-start-state h2 { color: #f0f9f2; }
+.dark .search-start-state svg { color: #bde9ca; }
+@media (max-width: 640px) { .search-result-summary { align-items: flex-start; flex-direction: column; } .search-start-state { padding: 1rem; } }
+
+/* Raffinement V6 issu de la revue : les outils de recherche et d’orientation deviennent des tables Atlas, avec un repère et une suite explicite. */
+.search-hero { background-color: #123b43; background-image: linear-gradient(90deg, transparent 0 67%, rgba(179, 221, 200, .13) 67% 67.1%, transparent 67.1%), linear-gradient(rgba(204, 237, 216, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(204, 237, 216, .08) 1px, transparent 1px); background-size: auto, 2.75rem 2.75rem, 2.75rem 2.75rem; position: relative; }
+.search-hero::after { border: 1px solid rgba(199, 230, 208, .3); border-bottom: 0; border-radius: 50% 50% 0 0; content: ""; height: 10.5rem; pointer-events: none; position: absolute; right: 8%; top: 2.75rem; transform: rotate(-24deg); width: 21rem; }
+.search-hero .container { position: relative; z-index: 1; }
+.search-index-ledger { align-items: center; color: #a9cdbb; display: flex; font-family: "IBM Plex Mono", monospace; font-size: .55rem; gap: .6rem; letter-spacing: .065em; margin: .7rem 0 .85rem; text-transform: uppercase; }
+.search-index-ledger i { background: #9bceaf; display: block; height: 1px; width: 2rem; }
+.search-hero + .atlas-trail { background: #153c42; border-bottom: 1px solid #2a5b5a; color: #d9ede0; }
+.search-hero + .atlas-trail .atlas-trail-heading, .search-hero + .atlas-trail .atlas-trail-static, .search-hero + .atlas-trail a { color: #d9ede0; }
+.search-hero + .atlas-trail li::before { border-color: #86bca0; }
+.page-hero-orientation { background-color: #f3f5ed !important; background-image: linear-gradient(90deg, #f8f5ed 0 60%, transparent 60%), linear-gradient(rgba(41, 91, 82, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(41, 91, 82, .08) 1px, transparent 1px) !important; background-size: auto, 2.4rem 2.4rem, 2.4rem 2.4rem !important; }
+.orientation-hero-atlas { display: grid; gap: .8rem; }
+.orientation-hero-atlas .atlas-panel { background: rgba(255, 255, 255, .48); border: 1px solid #9bbcaf; box-shadow: 8px 8px 0 rgba(61, 112, 94, .13); margin: 0; min-height: 0; padding: .75rem; }
+.orientation-hero-atlas .atlas-panel-art { min-height: 7rem; }
+.orientation-hero-atlas .atlas-panel figcaption { display: none; }
+.orientation-hero-atlas .orientation-hero-note { border-radius: 0; min-height: 0; }
+.dark .page-hero-orientation { background-color: #183b3d !important; background-image: linear-gradient(90deg, #17383b 0 60%, transparent 60%), linear-gradient(rgba(210, 239, 220, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(210, 239, 220, .08) 1px, transparent 1px) !important; }
+.dark .orientation-hero-atlas .atlas-panel { background: rgba(18, 55, 56, .85); border-color: #608b7d; box-shadow: 8px 8px 0 rgba(5, 27, 28, .26); }
+.dark .search-hero + .atlas-trail { background: #102e33; border-color: #315a56; }
+.dark .search-hero + .atlas-trail .atlas-trail-heading, .dark .search-hero + .atlas-trail .atlas-trail-static, .dark .search-hero + .atlas-trail a { color: #e0f0e5; }
+
+@media (max-width: 760px) {
+  .search-hero::after { height: 7rem; right: -6rem; top: 1.5rem; width: 14rem; }
+  .search-index-ledger { font-size: .48rem; }
+  .orientation-hero-atlas .atlas-panel-art { min-height: 5.5rem; }
+  .ui-filter-controls { grid-template-columns: 1fr; width: 100%; }
+  .filter-field { align-items: center; grid-template-columns: 5.6rem minmax(0, 1fr); }
+  .filter-field > span { font-size: .54rem; line-height: 1.25; white-space: nowrap; }
+  .filter-reset { width: 100%; }
+}
+
 /* Refonte structurante : l’accueil et le répertoire guident par routes, étapes et comparaisons plutôt que par une grille de cartes homogènes. */
 .orientation-board {
   background: linear-gradient(90deg, #fbf8ef 0 55%, #eef4ee 55% 100%);
@@ -1564,7 +1678,7 @@
   display: grid;
   grid-area: map;
   grid-template-rows: auto 1fr;
-  min-height: 36rem;
+  min-height: 39rem;
   padding: 1.1rem 1.1rem 1.1rem 3.6rem;
   position: relative;
 }
@@ -1617,6 +1731,8 @@
   display: grid;
   grid-area: routes;
   margin-right: 2.4rem;
+  max-height: 39rem;
+  overflow-y: auto;
 }
 
 .orientation-route-list-head {
@@ -1661,7 +1777,7 @@
 
 .orientation-route-icon { color: #0e6356; display: grid; place-items: center; }
 .orientation-route-copy { display: grid; gap: .12rem; }
-.orientation-route-copy b { font-size: .9rem; }
+.orientation-route-copy b { font-size: .86rem; }
 .orientation-route-copy small { color: #647a72; font-size: .71rem; line-height: 1.35; }
 .orientation-route-action { align-items: center; color: #0e6356; display: inline-flex; font-size: .67rem; font-weight: 700; gap: .25rem; white-space: nowrap; }
 
@@ -1805,6 +1921,7 @@
   .orientation-board-intro > p:not(.eyebrow, .orientation-board-index) { font-size: .9rem; }
   .orientation-board-local { align-items: flex-start; flex-direction: column; gap: .45rem; margin-top: 1.75rem; }
   .orientation-board-map { min-height: 24rem; padding: .75rem 0 1rem; }
+  .orientation-route-list { max-height: none; overflow-y: visible; }
   .orientation-board-map .atlas-panel { margin: 1.6rem 1.25rem 1.7rem 0; min-height: 16rem; }
   .orientation-board-map-note { bottom: .2rem; font-size: .65rem; right: .2rem; top: auto; width: min(90%, 18rem); }
   .orientation-route { grid-template-columns: auto auto minmax(0, 1fr); }

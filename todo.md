@@ -173,6 +173,15 @@
 - [x] Vérifier l’état final de la refonte de l’accueil et du répertoire Métiers.
 - [x] Créer le point de contrôle publié et présenter les modifications concrètes appliquées.
 
+## EcoCompass V6 — cohérence produit et expérience guidée
+
+- [x] Auditer les routes, les composants partagés, les données et les parcours existants avant toute évolution ciblée.
+- [x] Formaliser le design system V6 et une navigation qui regroupe les intentions sans masquer de fonctionnalités.
+- [x] Renforcer l’accueil, le parcours Découvrir et les retours d’apprentissage sans retirer leurs contenus.
+- [x] Consolider les métiers, la chaîne compétences → cours → projets → formations et l’orientation indicative.
+- [x] Améliorer les contextes Togo/Afrique, les graphiques pédagogiques, la recherche et les états importants.
+- [x] Vérifier les routes, thèmes, interactions, responsive, données documentées et build de production avant publication.
+
 ## EcoCompass V3
 
 - [x] Finaliser l’inventaire des exigences V3 et des composants existants à réutiliser.

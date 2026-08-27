@@ -14,7 +14,13 @@ const nav = [
   ["Données", "/togo"],
   ["Orientation", "/orientation"],
 ] as const;
-const secondaryNav = [["Économie réelle", "/economie-reelle"], ["Togo", "/togo"], ["Afrique", "/afrique"], ["Glossaire", "/glossaire"], ["Expliquer une notion", "/expliquer"], ["Défis économiques", "/defis"], ["Fiches de révision", "/fiches"], ["Ressources", "/ressources"], ["Compétences recherchées", "/marche-competences"], ["Établissements", "/etablissements"], ["Professionnels et simulations", "/professionnels"]] as const;
+const navigationGroups = [
+  { label: "Découvrir", note: "Comprendre les bases", links: [["Découvrir l’économie", "/decouvrir"], ["Cours", "/apprendre"], ["Glossaire", "/glossaire"], ["Fiches de révision", "/fiches"], ["Expliquer une notion", "/expliquer"], ["Ressources", "/ressources"]] },
+  { label: "Construire mon avenir", note: "Explorer et préparer", links: [["Métiers", "/metiers"], ["Compétences", "/competences"], ["Compétences recherchées", "/marche-competences"], ["Formations", "/formations"], ["Établissements", "/etablissements"], ["Opportunités", "/opportunites"]] },
+  { label: "Comprendre le monde", note: "Lire le réel avec méthode", links: [["Économie réelle", "/economie-reelle"], ["Données du Togo", "/togo"], ["Repères Afrique", "/afrique"]] },
+  { label: "Pratiquer", note: "Tester un raisonnement", links: [["EcoLab", "/ecolab"], ["Études de cas", "/cas"], ["Défis économiques", "/defis"], ["Simulations professionnelles", "/professionnels"], ["Projets", "/projets"]] },
+  { label: "Mon parcours", note: "Organiser ma progression", links: [["Mon tableau de bord", "/mon-ecocompass"], ["Mon parcours", "/mon-parcours"], ["Plan d’action", "/plan-action"], ["Mes compétences", "/competences"], ["Mes favoris", "/favoris"], ["Portfolio", "/portfolio"], ["Méthode EcoCompass", "/a-propos"]] },
+] as const;
 
 export function Brand({ compact = false }: { compact?: boolean }) {
   return (
@@ -53,12 +59,9 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
             <button type="button" className="grid h-10 w-10 place-items-center rounded-full bg-[#E8F0EA]" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"} aria-expanded={menuOpen}>{menuOpen ? <X size={21} /> : <Menu size={21} />}</button>
           </div>
         </div>
-        {menuOpen && <nav className="site-menu absolute left-0 right-0 top-full border-t border-[#14333A]/10 bg-[#F8F5ED]/98 px-4 py-5 shadow-2xl" aria-label="Navigation détaillée">
-          <div className="container menu-grid">
-            <section><p className="menu-label">Parcours essentiels</p><div className="menu-primary-links">{nav.map(([label, href]) => <Link key={href} href={href} className={`menu-primary-link ${isActive(href) ? "menu-primary-link-active" : ""}`} aria-current={isActive(href) ? "page" : undefined}>{label}<ArrowUpRight size={15} /></Link>)}</div></section>
-            <section><p className="menu-label">Ressources et analyse</p><div className="menu-secondary-links">{secondaryNav.map(([label, href]) => <Link key={href} href={href} className={isActive(href) ? "menu-secondary-link-active" : ""} aria-current={isActive(href) ? "page" : undefined}>{label}</Link>)}</div></section>
-            <section className="menu-personal"><p className="menu-label">Mon EcoCompass</p><Link href="/mon-ecocompass"><UserRound size={17} /> Tableau personnel <ArrowUpRight size={15} /></Link><Link href="/mon-parcours"><Compass size={17} /> Mon parcours <ArrowUpRight size={15} /></Link><Link href="/plan-action"><FlaskConical size={17} /> Plan d’action <ArrowUpRight size={15} /></Link><Link href="/favoris"><BookmarkCheck size={17} /> Mes favoris <ArrowUpRight size={15} /></Link><Link href="/a-propos"><ShieldCheck size={17} /> Méthode EcoCompass <ArrowUpRight size={15} /></Link></section>
-          </div>
+        {menuOpen && <nav className="site-menu site-menu-v6 absolute left-0 right-0 top-full border-t border-[#14333A]/10 bg-[#F8F5ED]/98 px-4 py-5 shadow-2xl" aria-label="Navigation détaillée">
+          <div className="container menu-v6-intro"><BrandMark /><p><b>Choisissez une intention.</b> Toutes les fonctionnalités restent accessibles par parcours, sans vous demander de connaître le nom de chaque outil.</p></div>
+          <div className="container menu-v6-grid">{navigationGroups.map((group) => <section className="menu-v6-group" key={group.label}><div><p className="menu-label">{group.label}</p><span>{group.note}</span></div><div>{group.links.map(([label, href]) => <Link key={`${href}-${label}`} href={href} className={isActive(href) ? "menu-v6-link menu-v6-link-active" : "menu-v6-link"} aria-current={isActive(href) ? "page" : undefined}>{label}<ArrowUpRight size={14} /></Link>)}</div></section>)}</div>
         </nav>}
       </header>
       <main id="main-content">{children}</main>

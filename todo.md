@@ -28,7 +28,7 @@
 
 - [x] Renforcer l’affichage responsable des données Togo avec valeur, année, unité, source et statut.
 - [x] Ajouter une entrée de contexte africain basée sur des contenus pédagogiques prudents.
-- [ ] Ne pas intégrer de statistique réelle non vérifiée.
+- [x] Ne pas intégrer de statistique réelle non vérifiée.
 
 ## Contrôle et livraison
 
@@ -221,4 +221,14 @@
 ## Correctifs de livraison — identité du créateur
 
 - [x] Conserver la mention « EcoCompass — Prototype pédagogique V5 » tout en ajoutant séparément l’attribution exacte du créateur dans le footer.
-- [ ] Créer un checkpoint final dédié et vérifier la publication de cette passe d’identité.
+- [x] Créer un checkpoint final dédié et vérifier la publication de cette passe d’identité.
+
+## Vérification de propagation — identité du créateur
+
+- [x] Contrôler à nouveau le domaine publié après propagation et confirmer la présence de la présentation du créateur et de l’attribution du footer.
+
+## Traçabilité des statistiques réelles — contrôle complémentaire
+
+- [ ] Auditer explicitement chaque statistique réelle affichée avec sa source, son année, son unité et sa limite de lecture.
+- [ ] Centraliser la traçabilité des statistiques réelles par route dans une note vérifiable.
+- [ ] Revalider le domaine publié et les pages de données après l’audit documentaire.

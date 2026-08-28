@@ -232,3 +232,13 @@
 - [x] Auditer explicitement chaque statistique réelle affichée avec sa source, son année, son unité et sa limite de lecture.
 - [x] Centraliser la traçabilité des statistiques réelles par route dans une note vérifiable.
 - [x] Revalider le domaine publié et les pages de données après l’audit documentaire.
+
+## Contact professionnel du créateur
+
+- [x] Ajouter sous le nom du créateur un bouton de contact professionnel sans inventer de coordonnées.
+- [x] Vérifier son survol, son focus clavier, son rendu responsive et publier la modification.
+
+## Vérification publiée — bouton de contact
+
+- [ ] Synchroniser la passe du bouton de contact vers la version publiée puis vérifier explicitement `/a-propos` sur le domaine déployé.
+- [ ] Contrôler sur le domaine publié le bouton en desktop et mobile, avec ses repères de survol et de focus clavier.

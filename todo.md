@@ -210,3 +210,15 @@
 - [x] Ajouter les opportunités avec liens officiels, sources et statuts de vérification.
 - [x] Relier profil, orientation, recherche et navigation aux nouveaux espaces V4.
 - [x] Vérifier la V4, documenter les limites et sauvegarder la version livrable.
+
+## Identité du créateur — V7
+
+- [x] Ajouter l’attribution exacte de SEDOUFIO Kossi David dans le footer sans modifier les autres informations.
+- [x] Intégrer la présentation exacte du créateur dans la page À propos existante.
+- [x] Ajouter au README les informations Projet, Créateur, Domaine et Version demandées.
+- [x] Vérifier le build et publier la mise à jour d’identité.
+
+## Correctifs de livraison — identité du créateur
+
+- [x] Conserver la mention « EcoCompass — Prototype pédagogique V5 » tout en ajoutant séparément l’attribution exacte du créateur dans le footer.
+- [ ] Créer un checkpoint final dédié et vérifier la publication de cette passe d’identité.

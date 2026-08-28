@@ -229,6 +229,6 @@
 
 ## Traçabilité des statistiques réelles — contrôle complémentaire
 
-- [ ] Auditer explicitement chaque statistique réelle affichée avec sa source, son année, son unité et sa limite de lecture.
-- [ ] Centraliser la traçabilité des statistiques réelles par route dans une note vérifiable.
-- [ ] Revalider le domaine publié et les pages de données après l’audit documentaire.
+- [x] Auditer explicitement chaque statistique réelle affichée avec sa source, son année, son unité et sa limite de lecture.
+- [x] Centraliser la traçabilité des statistiques réelles par route dans une note vérifiable.
+- [x] Revalider le domaine publié et les pages de données après l’audit documentaire.

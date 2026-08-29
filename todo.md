@@ -240,5 +240,15 @@
 
 ## Vérification publiée — bouton de contact
 
-- [ ] Synchroniser la passe du bouton de contact vers la version publiée puis vérifier explicitement `/a-propos` sur le domaine déployé.
-- [ ] Contrôler sur le domaine publié le bouton en desktop et mobile, avec ses repères de survol et de focus clavier.
+- [x] Synchroniser la passe du bouton de contact vers la version publiée puis vérifier explicitement `/a-propos` sur le domaine déployé.
+- [x] Contrôler sur le domaine publié le bouton en desktop et mobile, avec ses repères de survol et de focus clavier.
+
+## Contrôle publié approfondi — bouton de contact
+
+- [x] Vérifier sur le domaine publié `/a-propos` en viewport mobile que le bouton reste visible, lisible et bien positionné.
+- [x] Tester explicitement sur le domaine publié les états `:hover` et `:focus-visible` du bouton et consigner le résultat.
+
+## Preuves finales de production — contrôle interactif
+
+- [x] Vérifier explicitement `/a-propos` publié en viewport mobile et confirmer la visibilité du bouton.
+- [x] Mesurer sur `/a-propos` publié la pseudo-classe `:hover` et consigner ses styles avec le `:focus-visible`.

@@ -252,3 +252,19 @@
 
 - [x] Vérifier explicitement `/a-propos` publié en viewport mobile et confirmer la visibilité du bouton.
 - [x] Mesurer sur `/a-propos` publié la pseudo-classe `:hover` et consigner ses styles avec le `:focus-visible`.
+
+## Formulaire de contact professionnel
+
+- [x] Transformer le bouton Contact professionnel en ouverture d’une fenêtre modale accessible.
+- [x] Ajouter les champs du formulaire, les validations, les états de succès/erreur et la fermeture clavier.
+- [x] Ne pas simuler un envoi réel : documenter clairement l’absence de destination backend ou d’adresse de réception configurée.
+- [x] Vérifier desktop, mobile, focus, échappement et build avant publication.
+
+## Compléments d’accessibilité — formulaire de contact
+
+- [x] Ajouter des messages d’erreur visibles pour les champs invalides, au-delà de la validation native.
+- [x] Tester le focus initial, Tab/Shift+Tab, focus-visible et le retour du focus au bouton après fermeture.
+
+## Preuve focus-visible — modale de contact
+
+- [x] Vérifier les styles calculés du focus-visible sur un champ et sur le bouton de soumission, puis consigner le résultat.

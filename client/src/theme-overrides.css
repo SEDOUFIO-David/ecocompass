@@ -2119,3 +2119,162 @@
 .dark .creator-contact { background: #a9d7bb; border-color: #a9d7bb; color: #123139; }
 .dark .creator-contact:hover { background: #d1ebd8; border-color: #d1ebd8; box-shadow: 0 8px 20px rgba(169, 215, 187, .16); }
 @media (prefers-reduced-motion: reduce) { .creator-contact { transition: none; } .creator-contact:hover { transform: none; } }
+
+/* Contact modal: form accessible, readable and honest about the local-only state. */
+.creator-contact-dialog {
+  border-color: color-mix(in srgb, var(--border) 70%, var(--atlas-green));
+  background: var(--background);
+  color: var(--foreground);
+  max-height: min(90vh, 760px);
+  overflow-y: auto;
+}
+
+.creator-contact-dialog [data-slot="dialog-header"] {
+  gap: 0.55rem;
+  padding-right: 2rem;
+}
+
+.creator-contact-dialog [data-slot="dialog-title"] {
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  line-height: 1.05;
+}
+
+.creator-contact-dialog [data-slot="dialog-description"] {
+  color: var(--muted-foreground);
+  line-height: 1.55;
+  max-width: 48ch;
+}
+
+.creator-contact-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.35rem;
+}
+
+.creator-form-field {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.creator-form-field label {
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.creator-form-field input,
+.creator-form-field textarea {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  color: var(--foreground);
+  font: inherit;
+  line-height: 1.45;
+  min-height: 44px;
+  padding: 0.68rem 0.8rem;
+  transition: border-color 180ms var(--ease-out), box-shadow 180ms var(--ease-out), background-color 180ms var(--ease-out);
+  width: 100%;
+}
+
+.creator-form-field textarea {
+  min-height: 128px;
+  resize: vertical;
+}
+
+.creator-form-field input::placeholder,
+.creator-form-field textarea::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.82;
+}
+
+.creator-form-field input:hover,
+.creator-form-field textarea:hover {
+  border-color: color-mix(in srgb, var(--border) 45%, var(--atlas-green));
+}
+
+.creator-form-field input:focus-visible,
+.creator-form-field textarea:focus-visible {
+  border-color: var(--atlas-green);
+  box-shadow: 0 0 0 1px var(--atlas-green);
+  outline: 3px solid color-mix(in srgb, var(--ochre) 76%, transparent);
+  outline-offset: 2px;
+}
+
+.creator-form-status {
+  background: color-mix(in srgb, var(--ochre) 11%, var(--card));
+  border-left: 3px solid var(--ochre);
+  color: var(--foreground);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+}
+
+.creator-form-submit {
+  gap: 0.5rem;
+  justify-content: center;
+  min-height: 44px;
+}
+
+.dark .creator-contact-dialog {
+  border-color: color-mix(in srgb, var(--border) 60%, var(--atlas-green));
+}
+
+.dark .creator-form-field input,
+.dark .creator-form-field textarea {
+  background: var(--card);
+  border-color: var(--border);
+}
+
+@media (max-width: 640px) {
+  .creator-contact-dialog {
+    max-height: 92vh;
+    padding: 1.15rem;
+  }
+
+  .creator-contact-form {
+    gap: 0.82rem;
+  }
+
+  .creator-form-submit {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .creator-form-field input,
+  .creator-form-field textarea {
+    transition: none;
+  }
+}
+
+.creator-form-error {
+  background: color-mix(in srgb, #a63d32 10%, var(--card));
+  border-left: 3px solid #a63d32;
+  color: var(--foreground);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+}
+
+.creator-form-field input:invalid:not(:placeholder-shown),
+.creator-form-field textarea:invalid:not(:placeholder-shown) {
+  border-color: #a63d32;
+}
+
+.dark .creator-form-error {
+  background: color-mix(in srgb, #e58f83 13%, var(--card));
+  border-left-color: #e58f83;
+  color: #fff4f1;
+}
+
+.dark .creator-form-field input:invalid:not(:placeholder-shown),
+.dark .creator-form-field textarea:invalid:not(:placeholder-shown) {
+  border-color: #e58f83;
+}
